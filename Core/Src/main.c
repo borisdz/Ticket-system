@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -43,8 +44,34 @@
 /* Private variables ---------------------------------------------------------*/
 SPI_HandleTypeDef hspi1;
 
-UART_HandleTypeDef huart2;
+UART_HandleTypeDef huart1;
 
+/* Definitions for waitingSignal */
+osThreadId_t waitingSignalHandle;
+const osThreadAttr_t waitingSignal_attributes = {
+  .name = "waitingSignal",
+  .stack_size = 200 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for readRFID */
+osThreadId_t readRFIDHandle;
+const osThreadAttr_t readRFID_attributes = {
+  .name = "readRFID",
+  .stack_size = 300 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for sendDataH */
+osThreadId_t sendDataHHandle;
+const osThreadAttr_t sendDataH_attributes = {
+  .name = "sendDataH",
+  .stack_size = 300 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for dataQueue */
+osMessageQueueId_t dataQueueHandle;
+const osMessageQueueAttr_t dataQueue_attributes = {
+  .name = "dataQueue"
+};
 /* USER CODE BEGIN PV */
 uint8_t status;
 uint8_t str[MAX_LEN]; // MAX_LEN=16
@@ -54,8 +81,12 @@ uint8_t sNum[5];
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_USART2_UART_Init(void);
 static void MX_SPI1_Init(void);
+static void MX_USART1_UART_Init(void);
+void StartWaitingSignalTask(void *argument);
+void StartReadRFID(void *argument);
+void StartSendData(void *argument);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -93,21 +124,63 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART2_UART_Init();
   MX_SPI1_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
   MFRC522_Init();
   /* USER CODE END 2 */
 
+  /* Init scheduler */
+  osKernelInitialize();
+
+  /* USER CODE BEGIN RTOS_MUTEX */
+  /* add mutexes, ... */
+  /* USER CODE END RTOS_MUTEX */
+
+  /* USER CODE BEGIN RTOS_SEMAPHORES */
+  /* add semaphores, ... */
+  /* USER CODE END RTOS_SEMAPHORES */
+
+  /* USER CODE BEGIN RTOS_TIMERS */
+  /* start timers, add new ones, ... */
+  /* USER CODE END RTOS_TIMERS */
+
+  /* Create the queue(s) */
+  /* creation of dataQueue */
+  dataQueueHandle = osMessageQueueNew (16, sizeof(uint16_t), &dataQueue_attributes);
+
+  /* USER CODE BEGIN RTOS_QUEUES */
+  /* add queues, ... */
+  /* USER CODE END RTOS_QUEUES */
+
+  /* Create the thread(s) */
+  /* creation of waitingSignal */
+  waitingSignalHandle = osThreadNew(StartWaitingSignalTask, NULL, &waitingSignal_attributes);
+
+  /* creation of readRFID */
+  readRFIDHandle = osThreadNew(StartReadRFID, NULL, &readRFID_attributes);
+
+  /* creation of sendDataH */
+  sendDataHHandle = osThreadNew(StartSendData, NULL, &sendDataH_attributes);
+
+  /* USER CODE BEGIN RTOS_THREADS */
+  /* add threads, ... */
+  /* USER CODE END RTOS_THREADS */
+
+  /* USER CODE BEGIN RTOS_EVENTS */
+  /* add events, ... */
+  /* USER CODE END RTOS_EVENTS */
+
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  status = MFRC522_Request(PICC_REQIDL,str);
-	  status = MFRC522_Anticoll(str);
-	  memcpy(sNum,str,5);
-	  HAL_Delay(100);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -192,35 +265,35 @@ static void MX_SPI1_Init(void)
 }
 
 /**
-  * @brief USART2 Initialization Function
+  * @brief USART1 Initialization Function
   * @param None
   * @retval None
   */
-static void MX_USART2_UART_Init(void)
+static void MX_USART1_UART_Init(void)
 {
 
-  /* USER CODE BEGIN USART2_Init 0 */
+  /* USER CODE BEGIN USART1_Init 0 */
 
-  /* USER CODE END USART2_Init 0 */
+  /* USER CODE END USART1_Init 0 */
 
-  /* USER CODE BEGIN USART2_Init 1 */
+  /* USER CODE BEGIN USART1_Init 1 */
 
-  /* USER CODE END USART2_Init 1 */
-  huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
-  huart2.Init.WordLength = UART_WORDLENGTH_8B;
-  huart2.Init.StopBits = UART_STOPBITS_1;
-  huart2.Init.Parity = UART_PARITY_NONE;
-  huart2.Init.Mode = UART_MODE_TX_RX;
-  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-  if (HAL_UART_Init(&huart2) != HAL_OK)
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN USART2_Init 2 */
+  /* USER CODE BEGIN USART1_Init 2 */
 
-  /* USER CODE END USART2_Init 2 */
+  /* USER CODE END USART1_Init 2 */
 
 }
 
@@ -256,6 +329,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : USART_TX_Pin USART_RX_Pin */
+  GPIO_InitStruct.Pin = USART_TX_Pin|USART_RX_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pin : PA4 */
   GPIO_InitStruct.Pin = GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -278,7 +357,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
@@ -288,6 +367,86 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/* USER CODE BEGIN Header_StartWaitingSignalTask */
+/**
+  * @brief  Function implementing the waitingSignal thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartWaitingSignalTask */
+void StartWaitingSignalTask(void *argument)
+{
+  /* USER CODE BEGIN 5 */
+  /* Infinite loop */
+  for(;;)
+  {
+	  HAL_UART_Receive(&huart1, f, 8, 1000);
+	  if(f == 1){
+		  xTaskNotifyGive(readRFIDHandle);
+		  ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
+	  }
+    osDelay(1);
+  }
+  /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartReadRFID */
+/**
+* @brief Function implementing the readRFID thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartReadRFID */
+void StartReadRFID(void *argument)
+{
+  /* USER CODE BEGIN StartReadRFID */
+  /* Infinite loop */
+  for(;;)
+  {
+	  ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
+
+	  status = MFRC522_Request(PICC_REQIDL,str);
+	  status = MFRC522_Anticoll(str);
+	  memcpy(sNum,str,5);
+	  HAL_Delay(100);
+
+//	  for(int i=0;i<sizeof(sNum);i++){
+//		  xQueueSendToBack(dataQueueHandle,&sNum[i],0);
+//	  }
+	  xQueueSendToBack(dataQueueHandle,&sNum,0);
+
+	  xTaskNotifyGive(sendDataHandle);
+    osDelay(1);
+  }
+  /* USER CODE END StartReadRFID */
+}
+
+/* USER CODE BEGIN Header_StartSendData */
+/**
+* @brief Function implementing the sendDataH thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartSendData */
+void StartSendData(void *argument)
+{
+  /* USER CODE BEGIN StartSendData */
+	uint8_t data[5];
+  /* Infinite loop */
+  for(;;)
+  {
+	  ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
+
+	  xQueueReceive(dataQueueHandle, &data,0);
+
+	  HAL_UART_Transmit(&huart1, data, sizeof(data),1000);
+
+	  xTaskNotifyGive(waitingSignalHandle);
+    osDelay(1);
+  }
+  /* USER CODE END StartSendData */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.
