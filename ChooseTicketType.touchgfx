@@ -1,0 +1,351 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Main",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "imgBackground",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "bg.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "BusTicket",
+            "X": 129,
+            "Y": 147,
+            "Width": 236,
+            "Height": 44,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 9,
+                "TextId": "__SingleUse_83WR",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 236,
+                "Height": 44,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Red": 83,
+                  "Green": 151,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Red": 240,
+                  "Green": 240,
+                  "Blue": 240
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "TrainTicket",
+            "X": 129,
+            "Y": 72,
+            "Width": 236,
+            "Height": 44,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 9,
+                "TextId": "__SingleUse_IEBI",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 236,
+                "Height": 44,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Red": 83,
+                  "Green": 151,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Red": 240,
+                  "Green": 240,
+                  "Blue": 240
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "SwitchtoTrainTicket",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "TrainTicket"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "BuyTrainTicket"
+            }
+          },
+          {
+            "InteractionName": "SwitchtoBusTicket",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "BusTicket"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "BuyBusTicket"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "BuyTrainTicket",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "imgBackground",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "bg.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 33,
+            "Y": 17,
+            "Width": 169,
+            "Height": 21,
+            "TextId": "__SingleUse_SYHH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 33,
+            "Y": 213,
+            "Width": 145,
+            "Height": 21,
+            "TextId": "__SingleUse_OLLU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 365,
+            "Y": 163,
+            "Width": 100,
+            "Height": 100,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_small_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_small_fill_normal.png",
+            "TextId": "__SingleUse_7V5X",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\small_fill_normal.json"
+          },
+          {
+            "Type": "ScrollList",
+            "Name": "scrollList1",
+            "X": 33,
+            "Y": 55,
+            "Width": 210,
+            "Height": 120,
+            "LockPosition": true,
+            "Snapping": true,
+            "ItemTemplateName": "ListItemContainer",
+            "NumberofItems": 7,
+            "Easing": "Linear",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "BuyBusTicket",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "imgBackground",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "bg.png"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "ListItemContainer",
+        "X": 136,
+        "Y": 116,
+        "Width": 210,
+        "Height": 40,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 210,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "Y": 8,
+            "Width": 210,
+            "Height": 40,
+            "TextId": "__SingleUse_6J46",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": -1,
+            "Y": -19,
+            "Width": 210,
+            "Height": 118,
+            "RelativeFilename": "simple_div1.png"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "Name": "ChooseTicketType",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 24,
+    "StartupScreenName": "Main",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "touchgfx",
+    "UIPath": ".",
+    "ApplicationTemplateName": "Simulator",
+    "ApplicationTemplateVersion": "2.0.0",
+    "ApplicationTemplateDescription": "Simulator Application Template",
+    "AvailableColorDepths": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      24
+    ],
+    "AvailableLCDs": {
+      "1": "LCD1bpp",
+      "2": "LCD2bpp",
+      "4": "LCD4bpp",
+      "8": "LCD8bpp_ARGB2222",
+      "16": "LCD16bpp",
+      "24": "LCD24bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD24bpp": {
+        "Id": "LCD24bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "",
+    "FlashTargetCommand": "",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "AdditionalFeatures": [
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.23.0",
+  "CreatedBy": "4.23.0"
+}
