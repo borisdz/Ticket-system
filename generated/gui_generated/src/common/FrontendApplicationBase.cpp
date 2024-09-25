@@ -11,10 +11,14 @@
 #include <platform/driver/lcd/LCD24bpp.hpp>
 #include <gui/main_screen/MainView.hpp>
 #include <gui/main_screen/MainPresenter.hpp>
-#include <gui/buytrainticket_screen/BuyTrainTicketView.hpp>
-#include <gui/buytrainticket_screen/BuyTrainTicketPresenter.hpp>
-#include <gui/buybusticket_screen/BuyBusTicketView.hpp>
-#include <gui/buybusticket_screen/BuyBusTicketPresenter.hpp>
+#include <gui/trainticket_screen/TrainTicketView.hpp>
+#include <gui/trainticket_screen/TrainTicketPresenter.hpp>
+#include <gui/busticket_screen/BusTicketView.hpp>
+#include <gui/busticket_screen/BusTicketPresenter.hpp>
+#include <gui/reviewticket_screen/ReviewTicketView.hpp>
+#include <gui/reviewticket_screen/ReviewTicketPresenter.hpp>
+#include <gui/payticket_screen/PayTicketView.hpp>
+#include <gui/payticket_screen/PayTicketPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -47,28 +51,41 @@ void FrontendApplicationBase::gotoMainScreenNoTransitionImpl()
     touchgfx::makeTransition<MainView, MainPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// BuyTrainTicket
+// TrainTicket
 
-void FrontendApplicationBase::gotoBuyTrainTicketScreenSlideTransitionEast()
+void FrontendApplicationBase::gotoTrainTicketScreenSlideTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoBuyTrainTicketScreenSlideTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoTrainTicketScreenSlideTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoBuyTrainTicketScreenSlideTransitionEastImpl()
+void FrontendApplicationBase::gotoTrainTicketScreenSlideTransitionEastImpl()
 {
-    touchgfx::makeTransition<BuyTrainTicketView, BuyTrainTicketPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<TrainTicketView, TrainTicketPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// BuyBusTicket
+// BusTicket
 
-void FrontendApplicationBase::gotoBuyBusTicketScreenSlideTransitionEast()
+void FrontendApplicationBase::gotoBusTicketScreenSlideTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoBuyBusTicketScreenSlideTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoBusTicketScreenSlideTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoBuyBusTicketScreenSlideTransitionEastImpl()
+void FrontendApplicationBase::gotoBusTicketScreenSlideTransitionEastImpl()
 {
-    touchgfx::makeTransition<BuyBusTicketView, BuyBusTicketPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<BusTicketView, BusTicketPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// ReviewTicket
+
+void FrontendApplicationBase::gotoReviewTicketScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoReviewTicketScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoReviewTicketScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<ReviewTicketView, ReviewTicketPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

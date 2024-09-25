@@ -23,11 +23,14 @@ public:
     // Main
     void gotoMainScreenNoTransition();
 
-    // BuyTrainTicket
-    void gotoBuyTrainTicketScreenSlideTransitionEast();
+    // TrainTicket
+    void gotoTrainTicketScreenSlideTransitionEast();
 
-    // BuyBusTicket
-    void gotoBuyBusTicketScreenSlideTransitionEast();
+    // BusTicket
+    void gotoBusTicketScreenSlideTransitionEast();
+
+    // ReviewTicket
+    void gotoReviewTicketScreenNoTransition();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -37,11 +40,14 @@ protected:
     // Main
     void gotoMainScreenNoTransitionImpl();
 
-    // BuyTrainTicket
-    void gotoBuyTrainTicketScreenSlideTransitionEastImpl();
+    // TrainTicket
+    void gotoTrainTicketScreenSlideTransitionEastImpl();
 
-    // BuyBusTicket
-    void gotoBuyBusTicketScreenSlideTransitionEastImpl();
+    // BusTicket
+    void gotoBusTicketScreenSlideTransitionEastImpl();
+
+    // ReviewTicket
+    void gotoReviewTicketScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

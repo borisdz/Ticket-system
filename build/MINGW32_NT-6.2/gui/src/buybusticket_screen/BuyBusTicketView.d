@@ -47,8 +47,7 @@ build/MINGW32_NT-6.2/gui/src/buybusticket_screen/BuyBusTicketView.o: \
  touchgfx/framework/include/mvp/View.hpp \
  gui/include/gui/buybusticket_screen/BuyBusTicketPresenter.hpp \
  gui/include/gui/model/ModelListener.hpp \
- touchgfx/framework/include/touchgfx/widgets/Box.hpp \
- touchgfx/framework/include/touchgfx/widgets/Image.hpp
+ touchgfx/framework/include/touchgfx/widgets/Box.hpp
 
 gui/include/gui/buybusticket_screen/BuyBusTicketView.hpp:
 
@@ -145,5 +144,3 @@ gui/include/gui/buybusticket_screen/BuyBusTicketPresenter.hpp:
 gui/include/gui/model/ModelListener.hpp:
 
 touchgfx/framework/include/touchgfx/widgets/Box.hpp:
-
-touchgfx/framework/include/touchgfx/widgets/Image.hpp:

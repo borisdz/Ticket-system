@@ -11,17 +11,18 @@ ListItemContainerBase::ListItemContainerBase()
     setWidth(210);
     setHeight(40);
     box1.setPosition(0, 0, 210, 40);
-    box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    box1.setColor(touchgfx::Color::getColorFromRGB(0, 28, 56));
     add(box1);
 
     textArea1.setPosition(0, 8, 210, 40);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_6J46));
     add(textArea1);
 
     image1.setXY(-1, -19);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_SIMPLE_DIV1_ID));
+    image1.setVisible(false);
     add(image1);
 }
 

@@ -24,14 +24,21 @@
     <ClCompile Include="..\..\generated\gui_generated\src\main_screen\MainViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
-    <ClCompile Include="..\..\gui\src\buybusticket_screen\BuyBusTicketPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\buybusticket_screen\BuyBusTicketView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\buybusticket_screen\BuyBusTicketViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\buytrainticket_screen\BuyTrainTicketPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\buytrainticket_screen\BuyTrainTicketView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\buytrainticket_screen\BuyTrainTicketViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\ListItemContainer.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ListItemContainerBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\busticket_screen\BusTicketPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\busticket_screen\BusTicketView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\busticket_screen\BusTicketViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\payticket_screen\PayTicketPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\payticket_screen\PayTicketView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\payticket_screen\PayTicketViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\reviewticket_screen\ReviewTicketPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\reviewticket_screen\ReviewTicketView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\reviewticket_screen\ReviewTicketViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\trainticket_screen\TrainTicketPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\trainticket_screen\TrainTicketView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\trainticket_screen\TrainTicketViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -185,14 +192,21 @@
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\buybusticket_screen\BuyBusTicketPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\buybusticket_screen\BuyBusTicketView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\buybusticket_screen\BuyBusTicketViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\buytrainticket_screen\BuyTrainTicketPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\buytrainticket_screen\BuyTrainTicketView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\buytrainticket_screen\BuyTrainTicketViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\ListItemContainer.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ListItemContainerBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\busticket_screen\BusTicketPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\busticket_screen\BusTicketView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\busticket_screen\BusTicketViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\payticket_screen\PayTicketPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\payticket_screen\PayTicketView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\payticket_screen\PayTicketViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\reviewticket_screen\ReviewTicketPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\reviewticket_screen\ReviewTicketView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\reviewticket_screen\ReviewTicketViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\trainticket_screen\TrainTicketPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\trainticket_screen\TrainTicketView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\trainticket_screen\TrainTicketViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

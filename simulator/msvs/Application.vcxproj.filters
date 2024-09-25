@@ -196,29 +196,59 @@
     <Filter Include="Source Files\gui\containers">
       <UniqueIdentifier>B8CC3C11-2CE2-FB22-3D43-423086BB4EE7</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\buybusticket_screen">
-      <UniqueIdentifier>97B9500A-724B-4BA2-77E8-5A659267D501</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\gui\buytrainticket_screen">
       <UniqueIdentifier>344807A2-7B3A-DE44-C020-943F80A3E657</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\buybusticket_screen">
-      <UniqueIdentifier>C40265BF-D76B-ECE2-B566-4F12961BC2CC</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\buytrainticket_screen">
       <UniqueIdentifier>8365753A-F2BC-A492-6B72-1FFE9B149493</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\buybusticket_screen">
-      <UniqueIdentifier>0D87F9C8-3E7A-5C57-5658-75B02D84BE2A</UniqueIdentifier>
+    <Filter Include="Source Files\gui\payticket_screen">
+      <UniqueIdentifier>1945B8EA-3CF7-859D-FB98-11DE29D41B3A</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\buytrainticket_screen">
-      <UniqueIdentifier>43B30D9E-ADCA-41D8-E5F4-D1F5079B32F6</UniqueIdentifier>
+    <Filter Include="Source Files\gui\busticket_screen">
+      <UniqueIdentifier>E0FE7035-3723-4A0E-443C-0EDDAEFFCD86</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\buytrainticket_screen">
-      <UniqueIdentifier>E92AF48C-74E5-C966-CD72-C594D1C30944</UniqueIdentifier>
+    <Filter Include="Header Files\gui\trainticket_screen">
+      <UniqueIdentifier>0DB54872-50B5-452E-78C0-3D022D24FC23</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\buybusticket_screen">
-      <UniqueIdentifier>30D07754-650E-C547-C44D-28999B11D598</UniqueIdentifier>
+    <Filter Include="Header Files\gui\payticket_screen">
+      <UniqueIdentifier>FF8BAFB2-196B-69C5-EECA-BFE56EC6FD60</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\trainticket_screen">
+      <UniqueIdentifier>7DD5DEBE-BEA6-7890-8219-037073CF2EBE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\reviewticket_screen">
+      <UniqueIdentifier>BEFB846C-DEA8-8CB2-810F-032A08907D36</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\reviewticket_screen">
+      <UniqueIdentifier>1C7F2CB4-C3A1-42C2-FAB2-B80902B29C07</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\busticket_screen">
+      <UniqueIdentifier>D729F7FA-5B0D-D815-CE06-16F140D7D786</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\trainticket_screen">
+      <UniqueIdentifier>22B6FE9D-1D30-481A-C7C0-CF56423EC33D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\reviewticket_screen">
+      <UniqueIdentifier>E89A6362-5681-13F5-C9EE-C4ED7D7884AF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\reviewticket_screen">
+      <UniqueIdentifier>3AC7834D-F22E-355C-3B56-23F8E91CC591</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\payticket_screen">
+      <UniqueIdentifier>3AAD9C8D-ACFE-8CE5-49B8-1EB2830A3C99</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\busticket_screen">
+      <UniqueIdentifier>5E2446FC-0CDF-53C3-D0D8-FBFB057DB273</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\payticket_screen">
+      <UniqueIdentifier>5D7B187F-9050-4F7B-FAFD-646C75E4689F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\busticket_screen">
+      <UniqueIdentifier>F6FC84FD-E371-D4D2-3726-BA7C9A0BCC8B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\trainticket_screen">
+      <UniqueIdentifier>C8E52289-70E5-C947-2C58-06155192543D</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -261,29 +291,50 @@
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
       <Filter>Source Files\generated\simulator\video</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\buybusticket_screen\BuyBusTicketPresenter.cpp">
-      <Filter>Source Files\gui\buybusticket_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\buybusticket_screen\BuyBusTicketView.cpp">
-      <Filter>Source Files\gui\buybusticket_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\buybusticket_screen\BuyBusTicketViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\buybusticket_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\buytrainticket_screen\BuyTrainTicketPresenter.cpp">
-      <Filter>Source Files\gui\buytrainticket_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\buytrainticket_screen\BuyTrainTicketView.cpp">
       <Filter>Source Files\gui\buytrainticket_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\buytrainticket_screen\BuyTrainTicketViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\buytrainticket_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\ListItemContainer.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ListItemContainerBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\busticket_screen\BusTicketPresenter.cpp">
+      <Filter>Source Files\gui\busticket_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\busticket_screen\BusTicketView.cpp">
+      <Filter>Source Files\gui\busticket_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\busticket_screen\BusTicketViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\busticket_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\payticket_screen\PayTicketPresenter.cpp">
+      <Filter>Source Files\gui\payticket_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\payticket_screen\PayTicketView.cpp">
+      <Filter>Source Files\gui\payticket_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\payticket_screen\PayTicketViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\payticket_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\reviewticket_screen\ReviewTicketPresenter.cpp">
+      <Filter>Source Files\gui\reviewticket_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\reviewticket_screen\ReviewTicketView.cpp">
+      <Filter>Source Files\gui\reviewticket_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\reviewticket_screen\ReviewTicketViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\reviewticket_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\trainticket_screen\TrainTicketPresenter.cpp">
+      <Filter>Source Files\gui\trainticket_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\trainticket_screen\TrainTicketView.cpp">
+      <Filter>Source Files\gui\trainticket_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\trainticket_screen\TrainTicketViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\trainticket_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -736,29 +787,50 @@
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
       <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\buybusticket_screen\BuyBusTicketPresenter.hpp">
-      <Filter>Header Files\gui\buybusticket_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\buybusticket_screen\BuyBusTicketView.hpp">
-      <Filter>Header Files\gui\buybusticket_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\buybusticket_screen\BuyBusTicketViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\buybusticket_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\buytrainticket_screen\BuyTrainTicketPresenter.hpp">
-      <Filter>Header Files\gui\buytrainticket_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\buytrainticket_screen\BuyTrainTicketView.hpp">
       <Filter>Header Files\gui\buytrainticket_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\buytrainticket_screen\BuyTrainTicketViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\buytrainticket_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\ListItemContainer.hpp">
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ListItemContainerBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\busticket_screen\BusTicketPresenter.hpp">
+      <Filter>Header Files\gui\busticket_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\busticket_screen\BusTicketView.hpp">
+      <Filter>Header Files\gui\busticket_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\busticket_screen\BusTicketViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\busticket_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\payticket_screen\PayTicketPresenter.hpp">
+      <Filter>Header Files\gui\payticket_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\payticket_screen\PayTicketView.hpp">
+      <Filter>Header Files\gui\payticket_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\payticket_screen\PayTicketViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\payticket_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\reviewticket_screen\ReviewTicketPresenter.hpp">
+      <Filter>Header Files\gui\reviewticket_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\reviewticket_screen\ReviewTicketView.hpp">
+      <Filter>Header Files\gui\reviewticket_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\reviewticket_screen\ReviewTicketViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\reviewticket_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\trainticket_screen\TrainTicketPresenter.hpp">
+      <Filter>Header Files\gui\trainticket_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\trainticket_screen\TrainTicketView.hpp">
+      <Filter>Header Files\gui\trainticket_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\trainticket_screen\TrainTicketViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\trainticket_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

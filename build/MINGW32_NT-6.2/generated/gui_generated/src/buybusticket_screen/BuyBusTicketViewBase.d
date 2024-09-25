@@ -47,9 +47,7 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/buybusticket_screen/BuyBusTicke
  gui/include/gui/buybusticket_screen/BuyBusTicketPresenter.hpp \
  gui/include/gui/model/ModelListener.hpp \
  touchgfx/framework/include/touchgfx/widgets/Box.hpp \
- touchgfx/framework/include/touchgfx/widgets/Image.hpp \
- touchgfx/framework/include/touchgfx/Color.hpp \
- generated/images/include/images/BitmapDatabase.hpp
+ touchgfx/framework/include/touchgfx/Color.hpp
 
 generated/gui_generated/include/gui_generated/buybusticket_screen/BuyBusTicketViewBase.hpp:
 
@@ -145,8 +143,4 @@ gui/include/gui/model/ModelListener.hpp:
 
 touchgfx/framework/include/touchgfx/widgets/Box.hpp:
 
-touchgfx/framework/include/touchgfx/widgets/Image.hpp:
-
 touchgfx/framework/include/touchgfx/Color.hpp:
-
-generated/images/include/images/BitmapDatabase.hpp:

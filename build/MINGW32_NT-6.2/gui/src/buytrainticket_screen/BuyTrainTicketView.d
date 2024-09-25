@@ -55,8 +55,28 @@ build/MINGW32_NT-6.2/gui/src/buytrainticket_screen/BuyTrainTicketView.o: \
  touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
  touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp \
+ touchgfx/framework/include/touchgfx/widgets/AnimatedImage.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp \
+ touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/RepeatButtonTrigger.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/TiledImageButtonStyle.hpp \
+ touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp \
+ touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
+ touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
+ touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
+ touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp \
  touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp \
+ touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp \
  touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
  touchgfx/framework/include/touchgfx/EasingEquations.hpp \
  gui/include/gui/containers/ListItemContainer.hpp \
@@ -175,9 +195,49 @@ touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
 touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
-touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp:
+touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp:
+
+touchgfx/framework/include/touchgfx/widgets/AnimatedImage.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:
+
+touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/RepeatButtonTrigger.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/TiledImageButtonStyle.hpp:
+
+touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp:
+
+touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
+
+touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
+
+touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
+
+touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp:
 
 touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:
+
+touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp:
 
 touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp:
 

@@ -107,14 +107,22 @@ build/MINGW32_NT-6.2/generated/simulator/src/mainBase.o: \
  touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
  touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp \
+ touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
+ touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp \
  touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp \
+ touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp \
  touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
  gui/include/gui/containers/ListItemContainer.hpp \
  generated/gui_generated/include/gui_generated/containers/ListItemContainerBase.hpp \
  gui/include/gui/buybusticket_screen/BuyBusTicketView.hpp \
  generated/gui_generated/include/gui_generated/buybusticket_screen/BuyBusTicketViewBase.hpp \
  gui/include/gui/buybusticket_screen/BuyBusTicketPresenter.hpp \
+ gui/include/gui/reviewticketinfo_screen/ReviewTicketInfoView.hpp \
+ generated/gui_generated/include/gui_generated/reviewticketinfo_screen/ReviewTicketInfoViewBase.hpp \
+ gui/include/gui/reviewticketinfo_screen/ReviewTicketInfoPresenter.hpp \
+ gui/include/gui/paymentsreen_screen/PaymentSreenView.hpp \
+ generated/gui_generated/include/gui_generated/paymentsreen_screen/PaymentSreenViewBase.hpp \
+ gui/include/gui/paymentsreen_screen/PaymentSreenPresenter.hpp \
  touchgfx/framework/include/platform/driver/lcd/LCD24bpp.hpp \
  touchgfx/framework/include/touchgfx/lcd/LCD24DebugPrinter.hpp \
  touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp \
@@ -357,9 +365,13 @@ touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
 touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
-touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp:
+touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
+
+touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp:
 
 touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:
+
+touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp:
 
 touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp:
 
@@ -372,6 +384,18 @@ gui/include/gui/buybusticket_screen/BuyBusTicketView.hpp:
 generated/gui_generated/include/gui_generated/buybusticket_screen/BuyBusTicketViewBase.hpp:
 
 gui/include/gui/buybusticket_screen/BuyBusTicketPresenter.hpp:
+
+gui/include/gui/reviewticketinfo_screen/ReviewTicketInfoView.hpp:
+
+generated/gui_generated/include/gui_generated/reviewticketinfo_screen/ReviewTicketInfoViewBase.hpp:
+
+gui/include/gui/reviewticketinfo_screen/ReviewTicketInfoPresenter.hpp:
+
+gui/include/gui/paymentsreen_screen/PaymentSreenView.hpp:
+
+generated/gui_generated/include/gui_generated/paymentsreen_screen/PaymentSreenViewBase.hpp:
+
+gui/include/gui/paymentsreen_screen/PaymentSreenPresenter.hpp:
 
 touchgfx/framework/include/platform/driver/lcd/LCD24bpp.hpp:
 

@@ -16,10 +16,14 @@
 
 #include <gui/main_screen/MainView.hpp>
 #include <gui/main_screen/MainPresenter.hpp>
-#include <gui/buytrainticket_screen/BuyTrainTicketView.hpp>
-#include <gui/buytrainticket_screen/BuyTrainTicketPresenter.hpp>
-#include <gui/buybusticket_screen/BuyBusTicketView.hpp>
-#include <gui/buybusticket_screen/BuyBusTicketPresenter.hpp>
+#include <gui/trainticket_screen/TrainTicketView.hpp>
+#include <gui/trainticket_screen/TrainTicketPresenter.hpp>
+#include <gui/busticket_screen/BusTicketView.hpp>
+#include <gui/busticket_screen/BusTicketPresenter.hpp>
+#include <gui/reviewticket_screen/ReviewTicketView.hpp>
+#include <gui/reviewticket_screen/ReviewTicketPresenter.hpp>
+#include <gui/payticket_screen/PayTicketView.hpp>
+#include <gui/payticket_screen/PayTicketPresenter.hpp>
 
 
 /**
@@ -43,9 +47,11 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< MainView,
-            touchgfx::meta::TypeList< BuyTrainTicketView,
-            touchgfx::meta::TypeList< BuyBusTicketView,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< TrainTicketView,
+            touchgfx::meta::TypeList< BusTicketView,
+            touchgfx::meta::TypeList< ReviewTicketView,
+            touchgfx::meta::TypeList< PayTicketView,
+            touchgfx::meta::Nil > > > >
             > GeneratedViewTypes;
 
     /**
@@ -58,9 +64,11 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< MainPresenter,
-            touchgfx::meta::TypeList< BuyTrainTicketPresenter,
-            touchgfx::meta::TypeList< BuyBusTicketPresenter,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< TrainTicketPresenter,
+            touchgfx::meta::TypeList< BusTicketPresenter,
+            touchgfx::meta::TypeList< ReviewTicketPresenter,
+            touchgfx::meta::TypeList< PayTicketPresenter,
+            touchgfx::meta::Nil > > > >
             > GeneratedPresenterTypes;
 
     /**

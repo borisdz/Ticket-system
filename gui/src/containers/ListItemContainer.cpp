@@ -9,6 +9,7 @@ ListItemContainer::ListItemContainer() {
 
 void ListItemContainer::initialize() {
 	ListItemContainerBase::initialize();
+
 }
 
 void ListItemContainer::setListElements(int item) {

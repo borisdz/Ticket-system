@@ -12,6 +12,7 @@ public:
     virtual void initialize();
 
     void setListElements(int item);
+
 protected:
 };
 

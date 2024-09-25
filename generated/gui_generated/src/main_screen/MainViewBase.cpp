@@ -14,7 +14,7 @@ MainViewBase::MainViewBase() :
     add(__background);
 
     imgBackground.setXY(0, 0);
-    imgBackground.setBitmap(touchgfx::Bitmap(BITMAP_BG_ID));
+    imgBackground.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_SHATTERED_RAIN_DARK_ID));
     add(imgBackground);
 
     BusTicket.setBoxWithBorderPosition(0, 0, 236, 44);
@@ -53,15 +53,15 @@ void MainViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonConta
     if (&src == &TrainTicket)
     {
         //SwitchtoTrainTicket
-        //When TrainTicket clicked change screen to BuyTrainTicket
-        //Go to BuyTrainTicket with screen transition towards East
-        application().gotoBuyTrainTicketScreenSlideTransitionEast();
+        //When TrainTicket clicked change screen to TrainTicket
+        //Go to TrainTicket with screen transition towards East
+        application().gotoTrainTicketScreenSlideTransitionEast();
     }
     if (&src == &BusTicket)
     {
         //SwitchtoBusTicket
-        //When BusTicket clicked change screen to BuyBusTicket
-        //Go to BuyBusTicket with screen transition towards East
-        application().gotoBuyBusTicketScreenSlideTransitionEast();
+        //When BusTicket clicked change screen to BusTicket
+        //Go to BusTicket with screen transition towards East
+        application().gotoBusTicketScreenSlideTransitionEast();
     }
 }
