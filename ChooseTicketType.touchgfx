@@ -1,0 +1,890 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Main",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 480,
+            "LockPosition": true,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "BusTicket",
+            "X": 129,
+            "Y": 147,
+            "Width": 236,
+            "Height": 44,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 9,
+                "TextId": "__SingleUse_83WR",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 236,
+                "Height": 44,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Red": 83,
+                  "Green": 151,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Red": 240,
+                  "Green": 240,
+                  "Blue": 240
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "TrainTicket",
+            "X": 129,
+            "Y": 72,
+            "Width": 236,
+            "Height": 44,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 9,
+                "TextId": "__SingleUse_IEBI",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 236,
+                "Height": 44,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Red": 83,
+                  "Green": 151,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Red": 240,
+                  "Green": 240,
+                  "Blue": 240
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "SwitchtoTrainTicket",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "TrainTicket"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "TrainTicket"
+            }
+          },
+          {
+            "InteractionName": "SwitchtoBusTicket",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "BusTicket"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "BusTicket"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "TrainTicket",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 480,
+            "LockPosition": true,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTicketNo",
+            "X": 249,
+            "Y": 23,
+            "Width": 200,
+            "Height": 24,
+            "TextId": "__SingleUse_QORF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_QQ70",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "buttonDown",
+            "X": 249,
+            "Y": 69,
+            "Width": 70,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "TouchButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 10,
+                "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_down_50_50_000000.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_000000.svg.png"
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 70,
+                "Height": 50,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "buttonUp",
+            "X": 379,
+            "Y": 69,
+            "Width": 70,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "TouchButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 11,
+                "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_up_50_50_000000.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png"
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 70,
+                "Height": 50,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textSelectedDest",
+            "X": 262,
+            "Y": 170,
+            "Width": 175,
+            "Height": 21,
+            "TextId": "__SingleUse_NJBN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonNext",
+            "X": 262,
+            "Y": 211,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_inactive.png",
+            "TextId": "__SingleUse_2RSW",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ScrollList",
+            "Name": "scrollTrainDest",
+            "X": 14,
+            "Y": 20,
+            "Width": 210,
+            "Height": 230,
+            "Snapping": true,
+            "ItemTemplateName": "DestinationMenu",
+            "NumberofItems": 7,
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0,
+            "OverShootPercentage": 75
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 249,
+            "Y": 136,
+            "Width": 166,
+            "Height": 21,
+            "TextId": "__SingleUse_ED33",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "buttonDownPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDown"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDownPressed"
+            }
+          },
+          {
+            "InteractionName": "buttonUpPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonUp"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonUpPressed"
+            }
+          },
+          {
+            "InteractionName": "buttonNextPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonNext"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "ReviewTicket"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "BusTicket",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 480,
+            "LockPosition": true,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
+          },
+          {
+            "Type": "ScrollWheel",
+            "Name": "scrollTrain",
+            "X": 11,
+            "Y": 36,
+            "Width": 210,
+            "Height": 200,
+            "IsCircular": true,
+            "ItemTemplateName": "DestinationMenu",
+            "NumberofItems": 7,
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0,
+            "OverShootPercentage": 75
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTicketNo",
+            "X": 249,
+            "Y": 23,
+            "Width": 200,
+            "Height": 24,
+            "TextId": "__SingleUse_CT7L",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_H2HS",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "buttonDown",
+            "X": 249,
+            "Y": 69,
+            "Width": 70,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "TouchButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 10,
+                "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_down_50_50_000000.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_000000.svg.png"
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 70,
+                "Height": 50,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "buttonUp",
+            "X": 379,
+            "Y": 69,
+            "Width": 70,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "TouchButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 11,
+                "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_up_50_50_000000.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png"
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 70,
+                "Height": 50,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textSelectedDest",
+            "X": 238,
+            "Y": 136,
+            "Width": 211,
+            "Height": 72,
+            "TextId": "__SingleUse_HRNV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "Skopje"
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 262,
+            "Y": 211,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_inactive.png",
+            "TextId": "__SingleUse_5KIB",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "ReviewTicket",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 480,
+            "LockPosition": true,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textDestination",
+            "X": 17,
+            "Y": 15,
+            "Width": 449,
+            "Height": 61,
+            "TextId": "__SingleUse_XLKZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_4HKL",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textNoTickets",
+            "X": 17,
+            "Y": 101,
+            "Width": 159,
+            "Height": 21,
+            "TextId": "__SingleUse_10CM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_ZXT1",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonBuy",
+            "X": 291,
+            "Y": 201,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_inactive.png",
+            "TextId": "__SingleUse_6ZVF",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_inactive.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonCancel",
+            "X": 17,
+            "Y": 201,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_inactive.png",
+            "TextId": "__SingleUse_XWMH",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_inactive.json"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "buttonBuyPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonBuy"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonBuyPressed"
+            }
+          },
+          {
+            "InteractionName": "buttonCancelPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCancel"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonCancelPressed"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "PayTicket",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 480,
+            "LockPosition": true,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonCancel",
+            "X": 120,
+            "Y": 214,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_round_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_round_inactive.png",
+            "TextId": "__SingleUse_MWRR",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_round_inactive.json"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "creditCardImg",
+            "X": 190,
+            "Y": 86,
+            "Width": 100,
+            "Height": 100,
+            "Filename": "__generated\\icon_theme_images_action_credit_card_100_100_FFFFFF.svg.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 107,
+            "Y": 38,
+            "Width": 266,
+            "Height": 30,
+            "TextId": "__SingleUse_IS03",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "buttonPaymentCancelled",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCancel"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonPaymentCancelled"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "PaymentSuccess",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 480,
+            "LockPosition": true,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "PaymentFail",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 480,
+            "LockPosition": true,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "DestinationMenu",
+        "X": 136,
+        "Y": 116,
+        "Width": 210,
+        "Height": 40,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "text",
+            "Width": 210,
+            "Height": 40,
+            "TextId": "__SingleUse_6J46",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": -136,
+            "Y": 40,
+            "Width": 480,
+            "Height": 2,
+            "RelativeFilename": "__generated\\alternate_theme_images_dividers_horizontal_small_thin_light.png"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "Name": "ChooseTicketType",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 24,
+    "StartupScreenName": "Main",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "touchgfx",
+    "UIPath": ".",
+    "ApplicationTemplateName": "Simulator",
+    "ApplicationTemplateVersion": "2.0.0",
+    "ApplicationTemplateDescription": "Simulator Application Template",
+    "AvailableColorDepths": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      24
+    ],
+    "AvailableLCDs": {
+      "1": "LCD1bpp",
+      "2": "LCD2bpp",
+      "4": "LCD4bpp",
+      "8": "LCD8bpp_ARGB2222",
+      "16": "LCD16bpp",
+      "24": "LCD24bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD24bpp": {
+        "Id": "LCD24bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "",
+    "FlashTargetCommand": "",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "AdditionalFeatures": [
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.23.0",
+  "CreatedBy": "4.23.0"
+}
