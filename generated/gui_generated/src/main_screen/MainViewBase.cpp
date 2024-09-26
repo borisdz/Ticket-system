@@ -13,9 +13,9 @@ MainViewBase::MainViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    imgBackground.setXY(0, 0);
-    imgBackground.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_SHATTERED_RAIN_DARK_ID));
-    add(imgBackground);
+    background.setXY(0, 0);
+    background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X480_SPOTLIGHTS_ID));
+    add(background);
 
     BusTicket.setBoxWithBorderPosition(0, 0, 236, 44);
     BusTicket.setBorderSize(5);

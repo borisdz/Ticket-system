@@ -43,6 +43,7 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/main_screen/MainViewBase.o: \
  touchgfx/framework/include/touchgfx/transitions/Transition.hpp \
  gui/include/gui/model/Model.hpp \
  touchgfx/framework/include/touchgfx/Utils.hpp \
+ touchgfx/framework/include/touchgfx/hal/types.hpp \
  touchgfx/framework/include/mvp/View.hpp \
  gui/include/gui/main_screen/MainPresenter.hpp \
  gui/include/gui/model/ModelListener.hpp \
@@ -158,6 +159,8 @@ touchgfx/framework/include/touchgfx/transitions/Transition.hpp:
 gui/include/gui/model/Model.hpp:
 
 touchgfx/framework/include/touchgfx/Utils.hpp:
+
+touchgfx/framework/include/touchgfx/hal/types.hpp:
 
 touchgfx/framework/include/mvp/View.hpp:
 

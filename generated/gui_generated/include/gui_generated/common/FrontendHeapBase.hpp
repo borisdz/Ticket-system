@@ -24,6 +24,10 @@
 #include <gui/reviewticket_screen/ReviewTicketPresenter.hpp>
 #include <gui/payticket_screen/PayTicketView.hpp>
 #include <gui/payticket_screen/PayTicketPresenter.hpp>
+#include <gui/paymentsuccess_screen/PaymentSuccessView.hpp>
+#include <gui/paymentsuccess_screen/PaymentSuccessPresenter.hpp>
+#include <gui/paymentfail_screen/PaymentFailView.hpp>
+#include <gui/paymentfail_screen/PaymentFailPresenter.hpp>
 
 
 /**
@@ -51,7 +55,9 @@ public:
             touchgfx::meta::TypeList< BusTicketView,
             touchgfx::meta::TypeList< ReviewTicketView,
             touchgfx::meta::TypeList< PayTicketView,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< PaymentSuccessView,
+            touchgfx::meta::TypeList< PaymentFailView,
+            touchgfx::meta::Nil > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -68,7 +74,9 @@ public:
             touchgfx::meta::TypeList< BusTicketPresenter,
             touchgfx::meta::TypeList< ReviewTicketPresenter,
             touchgfx::meta::TypeList< PayTicketPresenter,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< PaymentSuccessPresenter,
+            touchgfx::meta::TypeList< PaymentFailPresenter,
+            touchgfx::meta::Nil > > > > > >
             > GeneratedPresenterTypes;
 
     /**

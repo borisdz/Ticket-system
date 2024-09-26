@@ -3,6 +3,7 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+#include <touchgfx/hal/types.hpp>
 
 using namespace touchgfx;
 
@@ -26,6 +27,10 @@ public:
     virtual void deactivate();
 
     virtual ~ReviewTicketPresenter() {}
+
+    int16_t getTicketCount(){
+    	return model->getTicketCount();
+    }
 
 private:
     ReviewTicketPresenter();

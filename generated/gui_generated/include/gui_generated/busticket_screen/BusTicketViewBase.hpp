@@ -10,7 +10,7 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/containers/scrollers/ScrollWheel.hpp>
-#include <gui/containers/ListItemContainer.hpp>
+#include <gui/containers/DestinationMenu.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
@@ -22,7 +22,7 @@ public:
     virtual ~BusTicketViewBase();
     virtual void setupScreen();
 
-    virtual void scrollTrainUpdateItem(ListItemContainer& item, int16_t itemIndex)
+    virtual void scrollTrainUpdateItem(DestinationMenu& item, int16_t itemIndex)
     {
         // Override and implement this function in BusTicket
     }
@@ -38,7 +38,7 @@ protected:
     touchgfx::Box __background;
     touchgfx::Image background;
     touchgfx::ScrollWheel scrollTrain;
-    touchgfx::DrawableListItems<ListItemContainer, 6> scrollTrainListItems;
+    touchgfx::DrawableListItems<DestinationMenu, 6> scrollTrainListItems;
     touchgfx::TextAreaWithOneWildcard textTicketNo;
     touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger >  >  buttonDown;
     touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger >  >  buttonUp;

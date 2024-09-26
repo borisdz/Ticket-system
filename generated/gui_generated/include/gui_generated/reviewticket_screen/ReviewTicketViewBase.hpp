@@ -9,6 +9,8 @@
 #include <gui/reviewticket_screen/ReviewTicketPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class ReviewTicketViewBase : public touchgfx::View<ReviewTicketPresenter>
 {
@@ -16,6 +18,18 @@ public:
     ReviewTicketViewBase();
     virtual ~ReviewTicketViewBase();
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void buttonBuyPressed()
+    {
+        // Override and implement this function in ReviewTicket
+    }
+    virtual void buttonCancelPressed()
+    {
+        // Override and implement this function in ReviewTicket
+    }
 
 protected:
     FrontendApplication& application() {
@@ -27,8 +41,30 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image background;
+    touchgfx::TextAreaWithOneWildcard textDestination;
+    touchgfx::TextAreaWithOneWildcard textNoTickets;
+    touchgfx::ButtonWithLabel buttonBuy;
+    touchgfx::ButtonWithLabel buttonCancel;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTDESTINATION_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textDestinationBuffer[TEXTDESTINATION_SIZE];
+    static const uint16_t TEXTNOTICKETS_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textNoTicketsBuffer[TEXTNOTICKETS_SIZE];
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<ReviewTicketViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

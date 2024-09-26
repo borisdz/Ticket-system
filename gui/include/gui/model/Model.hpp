@@ -39,6 +39,8 @@
 
 #include <touchgfx/Utils.hpp>
 
+#include <touchgfx/hal/types.hpp>
+
 class ModelListener;
 
 /**
@@ -73,11 +75,19 @@ public:
      * the ModelListener interface.
      */
     void tick();
+
+    void saveTicketCount(int16_t saveTicketCount);
+    int16_t getTicketCount();
+    void setDestinationSelected(int itemSelected);
+    int getTrainTicketScrollDestItem(void);
 protected:
     /**
      * Pointer to the currently active presenter.
      */
     ModelListener* modelListener;
+
+    int16_t ticketCount;
+    int trainTicketDestinationSelected;
 };
 
 #endif /* MODEL_HPP */

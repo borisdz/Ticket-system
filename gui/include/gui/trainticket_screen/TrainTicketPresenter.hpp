@@ -3,6 +3,7 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+#include <touchgfx/hal/types.hpp>
 
 using namespace touchgfx;
 
@@ -27,6 +28,9 @@ public:
 
     virtual ~TrainTicketPresenter() {}
 
+    void saveTicketCount(int16_t ticketCount);
+    int16_t getTicketCount();
+    virtual void destinationSelected(int16_t itemSelected);
 private:
     TrainTicketPresenter();
 

@@ -16,22 +16,8 @@ TrainTicketViewBase::TrainTicketViewBase() :
     add(__background);
 
     background.setXY(0, 0);
-    background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_CONTAINERS_LARGE_WIDE_DARK_ID));
+    background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X480_SPOTLIGHTS_ID));
     add(background);
-
-    scrollTrain.setPosition(11, 36, 210, 200);
-    scrollTrain.setHorizontal(false);
-    scrollTrain.setCircular(false);
-    scrollTrain.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
-    scrollTrain.setSwipeAcceleration(10);
-    scrollTrain.setDragAcceleration(10);
-    scrollTrain.setNumberOfItems(7);
-    scrollTrain.setSelectedItemOffset(0);
-    scrollTrain.setOvershootPercentage(75);
-    scrollTrain.setDrawableSize(40, 0);
-    scrollTrain.setDrawables(scrollTrainListItems, updateItemCallback);
-    scrollTrain.animateToItem(0, 0);
-    add(scrollTrain);
 
     textTicketNo.setXY(249, 23);
     textTicketNo.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -60,11 +46,9 @@ TrainTicketViewBase::TrainTicketViewBase() :
     buttonUp.setPosition(379, 69, 70, 50);
     add(buttonUp);
 
-    textSelectedDest.setXY(238, 136);
+    textSelectedDest.setXY(262, 170);
     textSelectedDest.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textSelectedDest.setLinespacing(0);
-    textSelectedDest.setWildcard(touchgfx::TypedText(T_RESOURCEID1).getText());
-    textSelectedDest.resizeToCurrentText();
     textSelectedDest.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NJBN));
     add(textSelectedDest);
 
@@ -75,6 +59,26 @@ TrainTicketViewBase::TrainTicketViewBase() :
     buttonNext.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonNext.setAction(buttonCallback);
     add(buttonNext);
+
+    scrollTrainDest.setPosition(14, 20, 210, 230);
+    scrollTrainDest.setHorizontal(false);
+    scrollTrainDest.setCircular(false);
+    scrollTrainDest.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
+    scrollTrainDest.setSwipeAcceleration(10);
+    scrollTrainDest.setDragAcceleration(10);
+    scrollTrainDest.setNumberOfItems(7);
+    scrollTrainDest.setPadding(0, 0);
+    scrollTrainDest.setSnapping(true);
+    scrollTrainDest.setOvershootPercentage(75);
+    scrollTrainDest.setDrawableSize(40, 0);
+    scrollTrainDest.setDrawables(scrollTrainDestListItems, updateItemCallback);
+    add(scrollTrainDest);
+
+    textArea1.setXY(249, 136);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ED33));
+    add(textArea1);
 }
 
 TrainTicketViewBase::~TrainTicketViewBase()
@@ -84,10 +88,10 @@ TrainTicketViewBase::~TrainTicketViewBase()
 
 void TrainTicketViewBase::setupScreen()
 {
-    scrollTrain.initialize();
-    for (int i = 0; i < scrollTrainListItems.getNumberOfDrawables(); i++)
+    scrollTrainDest.initialize();
+    for (int i = 0; i < scrollTrainDestListItems.getNumberOfDrawables(); i++)
     {
-        scrollTrainListItems[i].initialize();
+        scrollTrainDestListItems[i].initialize();
     }
 }
 
@@ -122,10 +126,8 @@ void TrainTicketViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
 
 void TrainTicketViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex)
 {
-    if (items == &scrollTrainListItems)
+    if (items == &scrollTrainDestListItems)
     {
-        touchgfx::Drawable* d = items->getDrawable(containerIndex);
-        ListItemContainer* cc = (ListItemContainer*)d;
-        scrollTrainUpdateItem(*cc, itemIndex);
+        scrollTrainDestUpdateItem(scrollTrainDestListItems[containerIndex], itemIndex);
     }
 }

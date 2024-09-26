@@ -41,6 +41,7 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  touchgfx/framework/include/touchgfx/transitions/Transition.hpp \
  gui/include/gui/model/Model.hpp \
  touchgfx/framework/include/touchgfx/Utils.hpp \
+ touchgfx/framework/include/touchgfx/hal/types.hpp \
  gui/include/gui/common/FrontendHeap.hpp \
  generated/gui_generated/include/gui_generated/common/FrontendHeapBase.hpp \
  touchgfx/framework/include/common/Meta.hpp \
@@ -78,28 +79,35 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp \
  touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
- gui/include/gui/buytrainticket_screen/BuyTrainTicketView.hpp \
- generated/gui_generated/include/gui_generated/buytrainticket_screen/BuyTrainTicketViewBase.hpp \
- gui/include/gui/buytrainticket_screen/BuyTrainTicketPresenter.hpp \
+ gui/include/gui/trainticket_screen/TrainTicketView.hpp \
+ generated/gui_generated/include/gui_generated/trainticket_screen/TrainTicketViewBase.hpp \
+ gui/include/gui/trainticket_screen/TrainTicketPresenter.hpp \
  touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
  touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
- touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp \
+ touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp \
  touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp \
- touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp \
  touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
- gui/include/gui/containers/ListItemContainer.hpp \
- generated/gui_generated/include/gui_generated/containers/ListItemContainerBase.hpp \
- gui/include/gui/buybusticket_screen/BuyBusTicketView.hpp \
- generated/gui_generated/include/gui_generated/buybusticket_screen/BuyBusTicketViewBase.hpp \
- gui/include/gui/buybusticket_screen/BuyBusTicketPresenter.hpp \
- gui/include/gui/reviewticketinfo_screen/ReviewTicketInfoView.hpp \
- generated/gui_generated/include/gui_generated/reviewticketinfo_screen/ReviewTicketInfoViewBase.hpp \
- gui/include/gui/reviewticketinfo_screen/ReviewTicketInfoPresenter.hpp \
- gui/include/gui/paymentsreen_screen/PaymentSreenView.hpp \
- generated/gui_generated/include/gui_generated/paymentsreen_screen/PaymentSreenViewBase.hpp \
- gui/include/gui/paymentsreen_screen/PaymentSreenPresenter.hpp \
+ gui/include/gui/containers/DestinationMenu.hpp \
+ generated/gui_generated/include/gui_generated/containers/DestinationMenuBase.hpp \
+ gui/include/gui/busticket_screen/BusTicketView.hpp \
+ generated/gui_generated/include/gui_generated/busticket_screen/BusTicketViewBase.hpp \
+ gui/include/gui/busticket_screen/BusTicketPresenter.hpp \
+ touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp \
+ touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp \
+ gui/include/gui/reviewticket_screen/ReviewTicketView.hpp \
+ generated/gui_generated/include/gui_generated/reviewticket_screen/ReviewTicketViewBase.hpp \
+ gui/include/gui/reviewticket_screen/ReviewTicketPresenter.hpp \
+ gui/include/gui/payticket_screen/PayTicketView.hpp \
+ generated/gui_generated/include/gui_generated/payticket_screen/PayTicketViewBase.hpp \
+ gui/include/gui/payticket_screen/PayTicketPresenter.hpp \
+ touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
+ gui/include/gui/paymentsuccess_screen/PaymentSuccessView.hpp \
+ generated/gui_generated/include/gui_generated/paymentsuccess_screen/PaymentSuccessViewBase.hpp \
+ gui/include/gui/paymentsuccess_screen/PaymentSuccessPresenter.hpp \
+ gui/include/gui/paymentfail_screen/PaymentFailView.hpp \
+ generated/gui_generated/include/gui_generated/paymentfail_screen/PaymentFailViewBase.hpp \
+ gui/include/gui/paymentfail_screen/PaymentFailPresenter.hpp \
  generated/texts/include/texts/TextKeysAndLanguages.hpp \
  touchgfx/framework/include/platform/driver/lcd/LCD24bpp.hpp \
  touchgfx/framework/include/touchgfx/lcd/LCD24DebugPrinter.hpp
@@ -186,6 +194,8 @@ gui/include/gui/model/Model.hpp:
 
 touchgfx/framework/include/touchgfx/Utils.hpp:
 
+touchgfx/framework/include/touchgfx/hal/types.hpp:
+
 gui/include/gui/common/FrontendHeap.hpp:
 
 generated/gui_generated/include/gui_generated/common/FrontendHeapBase.hpp:
@@ -260,11 +270,11 @@ touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 
 touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
 
-gui/include/gui/buytrainticket_screen/BuyTrainTicketView.hpp:
+gui/include/gui/trainticket_screen/TrainTicketView.hpp:
 
-generated/gui_generated/include/gui_generated/buytrainticket_screen/BuyTrainTicketViewBase.hpp:
+generated/gui_generated/include/gui_generated/trainticket_screen/TrainTicketViewBase.hpp:
 
-gui/include/gui/buytrainticket_screen/BuyTrainTicketPresenter.hpp:
+gui/include/gui/trainticket_screen/TrainTicketPresenter.hpp:
 
 touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
 
@@ -272,37 +282,51 @@ touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
 touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
-touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
-
-touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp:
+touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp:
 
 touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:
 
-touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp:
-
 touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp:
 
-gui/include/gui/containers/ListItemContainer.hpp:
+gui/include/gui/containers/DestinationMenu.hpp:
 
-generated/gui_generated/include/gui_generated/containers/ListItemContainerBase.hpp:
+generated/gui_generated/include/gui_generated/containers/DestinationMenuBase.hpp:
 
-gui/include/gui/buybusticket_screen/BuyBusTicketView.hpp:
+gui/include/gui/busticket_screen/BusTicketView.hpp:
 
-generated/gui_generated/include/gui_generated/buybusticket_screen/BuyBusTicketViewBase.hpp:
+generated/gui_generated/include/gui_generated/busticket_screen/BusTicketViewBase.hpp:
 
-gui/include/gui/buybusticket_screen/BuyBusTicketPresenter.hpp:
+gui/include/gui/busticket_screen/BusTicketPresenter.hpp:
 
-gui/include/gui/reviewticketinfo_screen/ReviewTicketInfoView.hpp:
+touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp:
 
-generated/gui_generated/include/gui_generated/reviewticketinfo_screen/ReviewTicketInfoViewBase.hpp:
+touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp:
 
-gui/include/gui/reviewticketinfo_screen/ReviewTicketInfoPresenter.hpp:
+gui/include/gui/reviewticket_screen/ReviewTicketView.hpp:
 
-gui/include/gui/paymentsreen_screen/PaymentSreenView.hpp:
+generated/gui_generated/include/gui_generated/reviewticket_screen/ReviewTicketViewBase.hpp:
 
-generated/gui_generated/include/gui_generated/paymentsreen_screen/PaymentSreenViewBase.hpp:
+gui/include/gui/reviewticket_screen/ReviewTicketPresenter.hpp:
 
-gui/include/gui/paymentsreen_screen/PaymentSreenPresenter.hpp:
+gui/include/gui/payticket_screen/PayTicketView.hpp:
+
+generated/gui_generated/include/gui_generated/payticket_screen/PayTicketViewBase.hpp:
+
+gui/include/gui/payticket_screen/PayTicketPresenter.hpp:
+
+touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
+
+gui/include/gui/paymentsuccess_screen/PaymentSuccessView.hpp:
+
+generated/gui_generated/include/gui_generated/paymentsuccess_screen/PaymentSuccessViewBase.hpp:
+
+gui/include/gui/paymentsuccess_screen/PaymentSuccessPresenter.hpp:
+
+gui/include/gui/paymentfail_screen/PaymentFailView.hpp:
+
+generated/gui_generated/include/gui_generated/paymentfail_screen/PaymentFailViewBase.hpp:
+
+gui/include/gui/paymentfail_screen/PaymentFailPresenter.hpp:
 
 generated/texts/include/texts/TextKeysAndLanguages.hpp:
 

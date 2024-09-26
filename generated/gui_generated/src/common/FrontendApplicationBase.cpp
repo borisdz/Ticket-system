@@ -19,6 +19,10 @@
 #include <gui/reviewticket_screen/ReviewTicketPresenter.hpp>
 #include <gui/payticket_screen/PayTicketView.hpp>
 #include <gui/payticket_screen/PayTicketPresenter.hpp>
+#include <gui/paymentsuccess_screen/PaymentSuccessView.hpp>
+#include <gui/paymentsuccess_screen/PaymentSuccessPresenter.hpp>
+#include <gui/paymentfail_screen/PaymentFailView.hpp>
+#include <gui/paymentfail_screen/PaymentFailPresenter.hpp>
 
 using namespace touchgfx;
 

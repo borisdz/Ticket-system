@@ -4,27 +4,28 @@
     <Language Id="GB" />
   </Languages>
   <Texts>
+    <TextGroup Id="Bus_Destinations" />
     <TextGroup Id="Train_Destinations">
-      <Text Id="ResourceId7" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Demir Kapija</Translation>
+      <Text Id="Skopje" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Skopje</Translation>
       </Text>
-      <Text Id="ResourceId6" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB" Alignment="Center">Drachevo</Translation>
+      <Text Id="Drachevo" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Drachevo</Translation>
       </Text>
-      <Text Id="ResourceId5" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Gradsko</Translation>
-      </Text>
-      <Text Id="ResourceId4" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Negotino</Translation>
-      </Text>
-      <Text Id="ResourceId3" Alignment="Center" TypographyId="Default">
+      <Text Id="Veles" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Veles</Translation>
       </Text>
-      <Text Id="ResourceId2" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Gevgelija</Translation>
+      <Text Id="Gradsko" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Gradsko</Translation>
       </Text>
-      <Text Id="ResourceId1" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Skopje</Translation>
+      <Text Id="Negotino" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Negotino</Translation>
+      </Text>
+      <Text Id="DemirKapija" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Demir Kapija</Translation>
+      </Text>
+      <Text Id="Gevgelija" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Gevgelija</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Group1">
@@ -36,6 +37,33 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_ED33" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Selected destination:</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZXT1" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_IS03" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">Pay with your card bellow:</Translation>
+      </Text>
+      <Text Id="__SingleUse_MWRR" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Cancel</Translation>
+      </Text>
+      <Text Id="__SingleUse_XWMH" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Cancel</Translation>
+      </Text>
+      <Text Id="__SingleUse_6ZVF" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Buy</Translation>
+      </Text>
+      <Text Id="__SingleUse_10CM" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Number of tickets: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4HKL" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_XLKZ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">The destination you have selected: &lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_H2HS" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">0</Translation>
       </Text>
@@ -51,8 +79,8 @@
       <Text Id="__SingleUse_2RSW" Alignment="Center" TypographyId="Typography_00">
         <Translation Language="GB">Next</Translation>
       </Text>
-      <Text Id="__SingleUse_NJBN" Alignment="Center" TypographyId="Typography_00">
-        <Translation Language="GB">Selected destination:&#10;&lt;value&gt;&#10;</Translation>
+      <Text Id="__SingleUse_NJBN" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">(Select a city from list)</Translation>
       </Text>
       <Text Id="__SingleUse_QQ70" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">0</Translation>
@@ -72,8 +100,8 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="Asap-Regular.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" />
-    <Typography Id="Typography_00" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="Asap-Regular.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Typography_00" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0-9" WildcardCharacterRanges="0-9" />
     <Typography Id="Typography_01" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography_02" Font="verdana.ttf" Size="50" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
   </Typographies>

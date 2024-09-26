@@ -14,12 +14,12 @@ BusTicketViewBase::BusTicketViewBase() :
     add(__background);
 
     background.setXY(0, 0);
-    background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_CONTAINERS_LARGE_WIDE_DARK_ID));
+    background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X480_SPOTLIGHTS_ID));
     add(background);
 
     scrollTrain.setPosition(11, 36, 210, 200);
     scrollTrain.setHorizontal(false);
-    scrollTrain.setCircular(false);
+    scrollTrain.setCircular(true);
     scrollTrain.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
     scrollTrain.setSwipeAcceleration(10);
     scrollTrain.setDragAcceleration(10);
@@ -59,7 +59,7 @@ BusTicketViewBase::BusTicketViewBase() :
     textSelectedDest.setXY(238, 136);
     textSelectedDest.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textSelectedDest.setLinespacing(0);
-    textSelectedDest.setWildcard(touchgfx::TypedText(T_RESOURCEID1).getText());
+    textSelectedDest.setWildcard(touchgfx::TypedText(T_SKOPJE).getText());
     textSelectedDest.resizeToCurrentText();
     textSelectedDest.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HRNV));
     add(textSelectedDest);
@@ -91,7 +91,7 @@ void BusTicketViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInt
     if (items == &scrollTrainListItems)
     {
         touchgfx::Drawable* d = items->getDrawable(containerIndex);
-        ListItemContainer* cc = (ListItemContainer*)d;
+        DestinationMenu* cc = (DestinationMenu*)d;
         scrollTrainUpdateItem(*cc, itemIndex);
     }
 }

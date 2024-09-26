@@ -9,11 +9,12 @@
 #include <gui/trainticket_screen/TrainTicketPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/containers/scrollers/ScrollWheel.hpp>
-#include <gui/containers/ListItemContainer.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/containers/scrollers/ScrollList.hpp>
+#include <gui/containers/DestinationMenu.hpp>
 
 class TrainTicketViewBase : public touchgfx::View<TrainTicketPresenter>
 {
@@ -22,7 +23,7 @@ public:
     virtual ~TrainTicketViewBase();
     virtual void setupScreen();
 
-    virtual void scrollTrainUpdateItem(ListItemContainer& item, int16_t itemIndex)
+    virtual void scrollTrainDestUpdateItem(DestinationMenu& item, int16_t itemIndex)
     {
         // Override and implement this function in TrainTicket
     }
@@ -49,13 +50,14 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image background;
-    touchgfx::ScrollWheel scrollTrain;
-    touchgfx::DrawableListItems<ListItemContainer, 6> scrollTrainListItems;
     touchgfx::TextAreaWithOneWildcard textTicketNo;
     touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger >  >  buttonDown;
     touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger >  >  buttonUp;
-    touchgfx::TextAreaWithOneWildcard textSelectedDest;
+    touchgfx::TextArea textSelectedDest;
     touchgfx::ButtonWithLabel buttonNext;
+    touchgfx::ScrollList scrollTrainDest;
+    touchgfx::DrawableListItems<DestinationMenu, 7> scrollTrainDestListItems;
+    touchgfx::TextArea textArea1;
 
     /*
      * Wildcard Buffers

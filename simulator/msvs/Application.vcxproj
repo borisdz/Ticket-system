@@ -24,9 +24,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\main_screen\MainViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
-    <ClCompile Include="..\..\gui\src\buytrainticket_screen\BuyTrainTicketView.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\ListItemContainer.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\ListItemContainerBase.cpp"/>
     <ClCompile Include="..\..\gui\src\busticket_screen\BusTicketPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\busticket_screen\BusTicketView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\busticket_screen\BusTicketViewBase.cpp"/>
@@ -39,6 +36,14 @@
     <ClCompile Include="..\..\gui\src\trainticket_screen\TrainTicketPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\trainticket_screen\TrainTicketView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\trainticket_screen\TrainTicketViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\DestinationMenu.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DestinationMenuBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\paymentfail_screen\PaymentFailPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\paymentfail_screen\PaymentFailView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\paymentfail_screen\PaymentFailViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\paymentsuccess_screen\PaymentSuccessPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\paymentsuccess_screen\PaymentSuccessView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\paymentsuccess_screen\PaymentSuccessViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -193,8 +198,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\buytrainticket_screen\BuyTrainTicketView.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\ListItemContainer.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ListItemContainerBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\busticket_screen\BusTicketPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\busticket_screen\BusTicketView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\busticket_screen\BusTicketViewBase.hpp"/>
@@ -207,6 +210,14 @@
     <ClInclude Include="..\..\gui\include\gui\trainticket_screen\TrainTicketPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\trainticket_screen\TrainTicketView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\trainticket_screen\TrainTicketViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\DestinationMenu.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DestinationMenuBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\paymentfail_screen\PaymentFailPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\paymentfail_screen\PaymentFailView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\paymentfail_screen\PaymentFailViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\paymentsuccess_screen\PaymentSuccessPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\paymentsuccess_screen\PaymentSuccessView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\paymentsuccess_screen\PaymentSuccessViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

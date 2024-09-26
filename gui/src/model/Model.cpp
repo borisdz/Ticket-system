@@ -34,11 +34,29 @@
  *****************************************************************************/
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
+#include <touchgfx/hal/types.hpp>
 
-Model::Model() : modelListener(0)
+Model::Model() : modelListener(0),ticketCount(0)
 {
 }
 
 void Model::tick()
 {
+}
+
+
+void Model::setDestinationSelected(int itemSelected){
+	trainTicketDestinationSelected = itemSelected;
+}
+
+int Model::getTrainTicketScrollDestItem(void){
+	return trainTicketDestinationSelected;
+}
+
+int16_t Model::getTicketCount(){
+	return ticketCount;
+}
+
+void Model::saveTicketCount(int16_t saveTicketCount){
+	ticketCount=saveTicketCount;
 }

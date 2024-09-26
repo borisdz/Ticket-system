@@ -4,16 +4,37 @@
 #include <gui_generated/payticket_screen/PayTicketViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
-PayTicketViewBase::PayTicketViewBase()
+PayTicketViewBase::PayTicketViewBase() :
+    buttonCallback(this, &PayTicketViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
     background.setXY(0, 0);
-    background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_CONTAINERS_LARGE_WIDE_DARK_ID));
+    background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X480_SPOTLIGHTS_ID));
     add(background);
+
+    buttonCancel.setXY(120, 214);
+    buttonCancel.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_INACTIVE_ID));
+    buttonCancel.setLabelText(touchgfx::TypedText(T___SINGLEUSE_MWRR));
+    buttonCancel.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonCancel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonCancel.setAction(buttonCallback);
+    add(buttonCancel);
+
+    creditCardImg.setBitmap(touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_CREDIT_CARD_100_100_FFFFFF_SVG_ID));
+    creditCardImg.setPosition(190, 86, 100, 100);
+    creditCardImg.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    add(creditCardImg);
+
+    textArea1.setPosition(107, 38, 266, 30);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IS03));
+    add(textArea1);
 }
 
 PayTicketViewBase::~PayTicketViewBase()
@@ -24,4 +45,15 @@ PayTicketViewBase::~PayTicketViewBase()
 void PayTicketViewBase::setupScreen()
 {
 
+}
+
+void PayTicketViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &buttonCancel)
+    {
+        //buttonPaymentCancelled
+        //When buttonCancel clicked call virtual function
+        //Call buttonPaymentCancelled
+        buttonPaymentCancelled();
+    }
 }

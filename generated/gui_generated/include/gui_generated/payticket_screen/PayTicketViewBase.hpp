@@ -9,6 +9,9 @@
 #include <gui/payticket_screen/PayTicketPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class PayTicketViewBase : public touchgfx::View<PayTicketPresenter>
 {
@@ -16,6 +19,14 @@ public:
     PayTicketViewBase();
     virtual ~PayTicketViewBase();
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void buttonPaymentCancelled()
+    {
+        // Override and implement this function in PayTicket
+    }
 
 protected:
     FrontendApplication& application() {
@@ -27,8 +38,21 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image background;
+    touchgfx::ButtonWithLabel buttonCancel;
+    touchgfx::ScalableImage creditCardImg;
+    touchgfx::TextArea textArea1;
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<PayTicketViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 
