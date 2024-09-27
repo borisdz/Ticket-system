@@ -16,7 +16,7 @@ public:
     virtual void buttonUpPressed();
     virtual void buttonDownPressed();
 protected:
-    int16_t ticketCount;
+    int16_t trainTicketCount;
     Callback<TrainTicketView, int16_t> scrollTrainDest_ItemSelectedCallback;
     void scrollTrainDest_ItemSelectedHandler(int16_t itemSelected);
 };

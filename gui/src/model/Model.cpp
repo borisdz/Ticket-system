@@ -46,11 +46,11 @@ void Model::tick()
 
 
 void Model::setDestinationSelected(int itemSelected){
-	trainTicketDestinationSelected = itemSelected;
+	ticketDestinationSelected = itemSelected;
 }
 
-int Model::getTrainTicketScrollDestItem(void){
-	return trainTicketDestinationSelected;
+int Model::getTicketScrollDestItem(void){
+	return ticketDestinationSelected;
 }
 
 int16_t Model::getTicketCount(){

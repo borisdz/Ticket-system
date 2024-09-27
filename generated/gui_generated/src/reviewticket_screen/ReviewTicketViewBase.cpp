@@ -17,15 +17,13 @@ ReviewTicketViewBase::ReviewTicketViewBase() :
     background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X480_SPOTLIGHTS_ID));
     add(background);
 
-    textDestination.setPosition(17, 15, 449, 61);
+    textDestination.setPosition(17, 15, 122, 24);
     textDestination.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textDestination.setLinespacing(0);
-    Unicode::snprintf(textDestinationBuffer, TEXTDESTINATION_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_4HKL).getText());
-    textDestination.setWildcard(textDestinationBuffer);
     textDestination.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XLKZ));
     add(textDestination);
 
-    textNoTickets.setXY(17, 101);
+    textNoTickets.setXY(17, 112);
     textNoTickets.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textNoTickets.setLinespacing(0);
     Unicode::snprintf(textNoTicketsBuffer, TEXTNOTICKETS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ZXT1).getText());
@@ -49,6 +47,12 @@ ReviewTicketViewBase::ReviewTicketViewBase() :
     buttonCancel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonCancel.setAction(buttonCallback);
     add(buttonCancel);
+
+    selectedDestination.setPosition(165, 15, 167, 24);
+    selectedDestination.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    selectedDestination.setLinespacing(0);
+    selectedDestination.setTypedText(touchgfx::TypedText(T___SINGLEUSE_719L));
+    add(selectedDestination);
 }
 
 ReviewTicketViewBase::~ReviewTicketViewBase()

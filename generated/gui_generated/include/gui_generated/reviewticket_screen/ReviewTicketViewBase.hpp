@@ -9,6 +9,7 @@
 #include <gui/reviewticket_screen/ReviewTicketPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 
@@ -41,16 +42,15 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image background;
-    touchgfx::TextAreaWithOneWildcard textDestination;
+    touchgfx::TextArea textDestination;
     touchgfx::TextAreaWithOneWildcard textNoTickets;
     touchgfx::ButtonWithLabel buttonBuy;
     touchgfx::ButtonWithLabel buttonCancel;
+    touchgfx::TextArea selectedDestination;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTDESTINATION_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textDestinationBuffer[TEXTDESTINATION_SIZE];
     static const uint16_t TEXTNOTICKETS_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textNoTicketsBuffer[TEXTNOTICKETS_SIZE];
 

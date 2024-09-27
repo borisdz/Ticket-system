@@ -7,7 +7,9 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 BusTicketViewBase::BusTicketViewBase() :
-    updateItemCallback(this, &BusTicketViewBase::updateItemCallbackHandler)
+    updateItemCallback(this, &BusTicketViewBase::updateItemCallbackHandler),
+    flexButtonCallback(this, &BusTicketViewBase::flexButtonCallbackHandler),
+    buttonCallback(this, &BusTicketViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -17,59 +19,66 @@ BusTicketViewBase::BusTicketViewBase() :
     background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X480_SPOTLIGHTS_ID));
     add(background);
 
-    scrollTrain.setPosition(11, 36, 210, 200);
-    scrollTrain.setHorizontal(false);
-    scrollTrain.setCircular(true);
-    scrollTrain.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
-    scrollTrain.setSwipeAcceleration(10);
-    scrollTrain.setDragAcceleration(10);
-    scrollTrain.setNumberOfItems(7);
-    scrollTrain.setSelectedItemOffset(0);
-    scrollTrain.setOvershootPercentage(75);
-    scrollTrain.setDrawableSize(40, 0);
-    scrollTrain.setDrawables(scrollTrainListItems, updateItemCallback);
-    scrollTrain.animateToItem(0, 0);
-    add(scrollTrain);
+    textArea1.setXY(249, 136);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SN6S));
+    add(textArea1);
 
-    textTicketNo.setXY(249, 23);
-    textTicketNo.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textTicketNo.setLinespacing(0);
-    Unicode::snprintf(textTicketNoBuffer, TEXTTICKETNO_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_H2HS).getText());
-    textTicketNo.setWildcard(textTicketNoBuffer);
-    textTicketNo.resizeToCurrentText();
-    textTicketNo.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CT7L));
-    add(textTicketNo);
+    busTextSelectedDest.setXY(262, 170);
+    busTextSelectedDest.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    busTextSelectedDest.setLinespacing(0);
+    busTextSelectedDest.setTypedText(touchgfx::TypedText(T___SINGLEUSE_AH6B));
+    add(busTextSelectedDest);
 
-    buttonDown.setBoxWithBorderPosition(0, 0, 70, 50);
-    buttonDown.setBorderSize(5);
-    buttonDown.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonDown.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_ARROW_DOWN_50_50_000000_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_000000_SVG_ID));
-    buttonDown.setIconXY(10, 0);
-    buttonDown.setPosition(249, 69, 70, 50);
-    add(buttonDown);
+    busTextTicketNo.setXY(249, 23);
+    busTextTicketNo.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    busTextTicketNo.setLinespacing(0);
+    Unicode::snprintf(busTextTicketNoBuffer, BUSTEXTTICKETNO_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_H2HS).getText());
+    busTextTicketNo.setWildcard(busTextTicketNoBuffer);
+    busTextTicketNo.resizeToCurrentText();
+    busTextTicketNo.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CT7L));
+    add(busTextTicketNo);
 
-    buttonUp.setBoxWithBorderPosition(0, 0, 70, 50);
-    buttonUp.setBorderSize(5);
-    buttonUp.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonUp.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_ARROW_UP_50_50_000000_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
-    buttonUp.setIconXY(11, 0);
-    buttonUp.setPosition(379, 69, 70, 50);
-    add(buttonUp);
+    busButtonDown.setBoxWithBorderPosition(0, 0, 70, 50);
+    busButtonDown.setBorderSize(5);
+    busButtonDown.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
+    busButtonDown.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_ARROW_DOWN_50_50_000000_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_000000_SVG_ID));
+    busButtonDown.setIconXY(10, 0);
+    busButtonDown.setAction(flexButtonCallback);
+    busButtonDown.setPosition(249, 69, 70, 50);
+    add(busButtonDown);
 
-    textSelectedDest.setXY(238, 136);
-    textSelectedDest.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textSelectedDest.setLinespacing(0);
-    textSelectedDest.setWildcard(touchgfx::TypedText(T_SKOPJE).getText());
-    textSelectedDest.resizeToCurrentText();
-    textSelectedDest.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HRNV));
-    add(textSelectedDest);
+    busButtonUp.setBoxWithBorderPosition(0, 0, 70, 50);
+    busButtonUp.setBorderSize(5);
+    busButtonUp.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
+    busButtonUp.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_ARROW_UP_50_50_000000_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    busButtonUp.setIconXY(11, 0);
+    busButtonUp.setAction(flexButtonCallback);
+    busButtonUp.setPosition(379, 69, 70, 50);
+    add(busButtonUp);
 
-    buttonWithLabel1.setXY(262, 211);
-    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_DISABLED_ID));
-    buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_5KIB));
-    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    add(buttonWithLabel1);
+    busButtonNext.setXY(262, 211);
+    busButtonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_DISABLED_ID));
+    busButtonNext.setLabelText(touchgfx::TypedText(T___SINGLEUSE_5KIB));
+    busButtonNext.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    busButtonNext.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    busButtonNext.setAction(buttonCallback);
+    add(busButtonNext);
+
+    scrollBusDest.setPosition(12, 23, 210, 238);
+    scrollBusDest.setHorizontal(false);
+    scrollBusDest.setCircular(false);
+    scrollBusDest.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
+    scrollBusDest.setSwipeAcceleration(10);
+    scrollBusDest.setDragAcceleration(10);
+    scrollBusDest.setNumberOfItems(10);
+    scrollBusDest.setPadding(0, 0);
+    scrollBusDest.setSnapping(false);
+    scrollBusDest.setOvershootPercentage(75);
+    scrollBusDest.setDrawableSize(40, 0);
+    scrollBusDest.setDrawables(scrollBusDestListItems, updateItemCallback);
+    add(scrollBusDest);
 }
 
 BusTicketViewBase::~BusTicketViewBase()
@@ -79,19 +88,46 @@ BusTicketViewBase::~BusTicketViewBase()
 
 void BusTicketViewBase::setupScreen()
 {
-    scrollTrain.initialize();
-    for (int i = 0; i < scrollTrainListItems.getNumberOfDrawables(); i++)
+    scrollBusDest.initialize();
+    for (int i = 0; i < scrollBusDestListItems.getNumberOfDrawables(); i++)
     {
-        scrollTrainListItems[i].initialize();
+        scrollBusDestListItems[i].initialize();
+    }
+}
+
+void BusTicketViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+{
+    if (&src == &busButtonDown)
+    {
+        //busButtonDownPressed
+        //When busButtonDown clicked call virtual function
+        //Call busButtonDownPressed
+        busButtonDownPressed();
+    }
+    if (&src == &busButtonUp)
+    {
+        //busButtonUpPressed
+        //When busButtonUp clicked call virtual function
+        //Call busButtonUpPressed
+        busButtonUpPressed();
+    }
+}
+
+void BusTicketViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &busButtonNext)
+    {
+        //busButtonNextPressed
+        //When busButtonNext clicked change screen to ReviewTicket
+        //Go to ReviewTicket with no screen transition
+        application().gotoReviewTicketScreenNoTransition();
     }
 }
 
 void BusTicketViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex)
 {
-    if (items == &scrollTrainListItems)
+    if (items == &scrollBusDestListItems)
     {
-        touchgfx::Drawable* d = items->getDrawable(containerIndex);
-        DestinationMenu* cc = (DestinationMenu*)d;
-        scrollTrainUpdateItem(*cc, itemIndex);
+        scrollBusDestUpdateItem(scrollBusDestListItems[containerIndex], itemIndex);
     }
 }

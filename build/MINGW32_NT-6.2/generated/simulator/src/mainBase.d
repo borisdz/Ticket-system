@@ -116,8 +116,6 @@ build/MINGW32_NT-6.2/generated/simulator/src/mainBase.o: \
  gui/include/gui/busticket_screen/BusTicketView.hpp \
  generated/gui_generated/include/gui_generated/busticket_screen/BusTicketViewBase.hpp \
  gui/include/gui/busticket_screen/BusTicketPresenter.hpp \
- touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp \
- touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp \
  gui/include/gui/reviewticket_screen/ReviewTicketView.hpp \
  generated/gui_generated/include/gui_generated/reviewticket_screen/ReviewTicketViewBase.hpp \
  gui/include/gui/reviewticket_screen/ReviewTicketPresenter.hpp \
@@ -390,10 +388,6 @@ gui/include/gui/busticket_screen/BusTicketView.hpp:
 generated/gui_generated/include/gui_generated/busticket_screen/BusTicketViewBase.hpp:
 
 gui/include/gui/busticket_screen/BusTicketPresenter.hpp:
-
-touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp:
-
-touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp:
 
 gui/include/gui/reviewticket_screen/ReviewTicketView.hpp:
 

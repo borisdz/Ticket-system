@@ -27,6 +27,10 @@ public:
 
     virtual ~BusTicketPresenter() {}
 
+    void saveBusTicketCount(int16_t busTicketCount);
+    int16_t getBusTicketCount();
+    virtual void busDestinationSelected(int16_t itemSelected);
+
 private:
     BusTicketPresenter();
 

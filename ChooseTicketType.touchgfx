@@ -282,7 +282,7 @@
             "X": 262,
             "Y": 170,
             "Width": 175,
-            "Height": 21,
+            "Height": 22,
             "TextId": "__SingleUse_NJBN",
             "TextRotation": "0",
             "Color": {
@@ -336,7 +336,7 @@
             "X": 249,
             "Y": 136,
             "Width": 166,
-            "Height": 21,
+            "Height": 22,
             "TextId": "__SingleUse_ED33",
             "TextRotation": "0",
             "Color": {
@@ -396,24 +396,40 @@
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
           },
           {
-            "Type": "ScrollWheel",
-            "Name": "scrollTrain",
-            "X": 11,
-            "Y": 36,
-            "Width": 210,
-            "Height": 200,
-            "IsCircular": true,
-            "ItemTemplateName": "DestinationMenu",
-            "NumberofItems": 7,
-            "Easing": "Back",
-            "EasingOption": "Out",
-            "SwipeAcceleration": 1.0,
-            "DragAcceleration": 1.0,
-            "OverShootPercentage": 75
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 249,
+            "Y": 136,
+            "Width": 166,
+            "Height": 22,
+            "TextId": "__SingleUse_SN6S",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           },
           {
             "Type": "TextArea",
-            "Name": "textTicketNo",
+            "Name": "busTextSelectedDest",
+            "X": 262,
+            "Y": 170,
+            "Width": 175,
+            "Height": 22,
+            "TextId": "__SingleUse_AH6B",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "busTextTicketNo",
             "X": 249,
             "Y": 23,
             "Width": 200,
@@ -434,7 +450,7 @@
           },
           {
             "Type": "FlexButton",
-            "Name": "buttonDown",
+            "Name": "busButtonDown",
             "X": 249,
             "Y": 69,
             "Width": 70,
@@ -480,7 +496,7 @@
           },
           {
             "Type": "FlexButton",
-            "Name": "buttonUp",
+            "Name": "busButtonUp",
             "X": 379,
             "Y": 69,
             "Width": 70,
@@ -525,27 +541,8 @@
             ]
           },
           {
-            "Type": "TextArea",
-            "Name": "textSelectedDest",
-            "X": 238,
-            "Y": 136,
-            "Width": 211,
-            "Height": 72,
-            "TextId": "__SingleUse_HRNV",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "Skopje"
-            }
-          },
-          {
             "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
+            "Name": "busButtonNext",
             "X": 262,
             "Y": 211,
             "Width": 175,
@@ -564,9 +561,59 @@
               "Blue": 255
             },
             "TextRotation": "0"
+          },
+          {
+            "Type": "ScrollList",
+            "Name": "scrollBusDest",
+            "X": 12,
+            "Y": 23,
+            "Width": 210,
+            "Height": 238,
+            "ItemTemplateName": "DestinationMenu",
+            "NumberofItems": 10,
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0,
+            "OverShootPercentage": 75
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "busButtonDownPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "busButtonDown"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "busButtonDownPressed"
+            }
+          },
+          {
+            "InteractionName": "busButtonUpPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "busButtonUp"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "busButtonUpPressed"
+            }
+          },
+          {
+            "InteractionName": "busButtonNextPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "busButtonNext"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "ReviewTicket"
+            }
+          }
+        ]
       },
       {
         "Name": "ReviewTicket",
@@ -584,28 +631,23 @@
             "Name": "textDestination",
             "X": 17,
             "Y": 15,
-            "Width": 449,
-            "Height": 61,
+            "Width": 122,
+            "Height": 24,
             "TextId": "__SingleUse_XLKZ",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            },
-            "Wildcard1": {
-              "TextId": "__SingleUse_4HKL",
-              "UseBuffer": true,
-              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
             "Name": "textNoTickets",
             "X": 17,
-            "Y": 101,
-            "Width": 159,
-            "Height": 21,
+            "Y": 112,
+            "Width": 207,
+            "Height": 24,
             "TextId": "__SingleUse_10CM",
             "TextRotation": "0",
             "Color": {
@@ -665,6 +707,21 @@
             },
             "TextRotation": "0",
             "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_inactive.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "selectedDestination",
+            "X": 165,
+            "Y": 15,
+            "Width": 167,
+            "Height": 24,
+            "TextId": "__SingleUse_719L",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
           }
         ],
         "Interactions": [

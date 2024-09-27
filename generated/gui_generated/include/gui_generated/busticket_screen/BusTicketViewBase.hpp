@@ -9,11 +9,12 @@
 #include <gui/busticket_screen/BusTicketPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/containers/scrollers/ScrollWheel.hpp>
-#include <gui/containers/DestinationMenu.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/containers/scrollers/ScrollList.hpp>
+#include <gui/containers/DestinationMenu.hpp>
 
 class BusTicketViewBase : public touchgfx::View<BusTicketPresenter>
 {
@@ -22,7 +23,19 @@ public:
     virtual ~BusTicketViewBase();
     virtual void setupScreen();
 
-    virtual void scrollTrainUpdateItem(DestinationMenu& item, int16_t itemIndex)
+    virtual void scrollBusDestUpdateItem(DestinationMenu& item, int16_t itemIndex)
+    {
+        // Override and implement this function in BusTicket
+    }
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void busButtonDownPressed()
+    {
+        // Override and implement this function in BusTicket
+    }
+    virtual void busButtonUpPressed()
     {
         // Override and implement this function in BusTicket
     }
@@ -37,19 +50,20 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image background;
-    touchgfx::ScrollWheel scrollTrain;
-    touchgfx::DrawableListItems<DestinationMenu, 6> scrollTrainListItems;
-    touchgfx::TextAreaWithOneWildcard textTicketNo;
-    touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger >  >  buttonDown;
-    touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger >  >  buttonUp;
-    touchgfx::TextAreaWithOneWildcard textSelectedDest;
-    touchgfx::ButtonWithLabel buttonWithLabel1;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextArea busTextSelectedDest;
+    touchgfx::TextAreaWithOneWildcard busTextTicketNo;
+    touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger >  >  busButtonDown;
+    touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger >  >  busButtonUp;
+    touchgfx::ButtonWithLabel busButtonNext;
+    touchgfx::ScrollList scrollBusDest;
+    touchgfx::DrawableListItems<DestinationMenu, 7> scrollBusDestListItems;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTTICKETNO_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textTicketNoBuffer[TEXTTICKETNO_SIZE];
+    static const uint16_t BUSTEXTTICKETNO_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar busTextTicketNoBuffer[BUSTEXTTICKETNO_SIZE];
 
 private:
 
@@ -57,11 +71,15 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<BusTicketViewBase, touchgfx::DrawableListItemsInterface*, int16_t, int16_t> updateItemCallback;
+    touchgfx::Callback<BusTicketViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
+    touchgfx::Callback<BusTicketViewBase, const touchgfx::AbstractButton&> buttonCallback;
 
     /*
      * Callback Handler Declarations
      */
     void updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex);
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

@@ -9,7 +9,7 @@ ReviewTicketPresenter::ReviewTicketPresenter(ReviewTicketView& v)
 
 void ReviewTicketPresenter::activate()
 {
-	view.setSelectedDestItem(model->getTrainTicketScrollDestItem());
+	view.setSelectedDestItem(model->getTicketScrollDestItem());
 }
 
 void ReviewTicketPresenter::deactivate()

@@ -11,7 +11,13 @@ public:
     virtual ~BusTicketView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void scrollBusDestUpdateItem(DestinationMenu& item, int16_t itemIndex);
+    virtual void busButtonUpPressed();
+    virtual void busButtonDownPressed();
 protected:
+    int16_t busTicketCount;
+    Callback<BusTicketView, int16_t> scrollBusDest_ItemSelectedCallback;
+    void scrollBusDest_ItemSelectedHandler(int16_t itemSelected);
 };
 
 #endif // BUSTICKETVIEW_HPP
