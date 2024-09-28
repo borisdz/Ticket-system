@@ -19,6 +19,22 @@ BusTicketViewBase::BusTicketViewBase() :
     background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X480_SPOTLIGHTS_ID));
     add(background);
 
+    buttonCancel.setXY(229, 215);
+    buttonCancel.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUND_INACTIVE_ID));
+    buttonCancel.setLabelText(touchgfx::TypedText(T___SINGLEUSE_99TS));
+    buttonCancel.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonCancel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonCancel.setAction(buttonCallback);
+    add(buttonCancel);
+
+    buttonNext.setXY(359, 215);
+    buttonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUND_INACTIVE_ID));
+    buttonNext.setLabelText(touchgfx::TypedText(T___SINGLEUSE_NDMJ));
+    buttonNext.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonNext.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonNext.setAction(buttonCallback);
+    add(buttonNext);
+
     textArea1.setXY(249, 136);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
@@ -57,14 +73,6 @@ BusTicketViewBase::BusTicketViewBase() :
     busButtonUp.setAction(flexButtonCallback);
     busButtonUp.setPosition(379, 69, 70, 50);
     add(busButtonUp);
-
-    busButtonNext.setXY(262, 211);
-    busButtonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_DISABLED_ID));
-    busButtonNext.setLabelText(touchgfx::TypedText(T___SINGLEUSE_5KIB));
-    busButtonNext.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    busButtonNext.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    busButtonNext.setAction(buttonCallback);
-    add(busButtonNext);
 
     scrollBusDest.setPosition(12, 23, 210, 238);
     scrollBusDest.setHorizontal(false);
@@ -115,12 +123,19 @@ void BusTicketViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButton
 
 void BusTicketViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &busButtonNext)
+    if (&src == &buttonNext)
     {
         //busButtonNextPressed
-        //When busButtonNext clicked change screen to ReviewTicket
+        //When buttonNext clicked change screen to ReviewTicket
         //Go to ReviewTicket with no screen transition
         application().gotoReviewTicketScreenNoTransition();
+    }
+    if (&src == &buttonCancel)
+    {
+        //buttonCancelPressed
+        //When buttonCancel clicked change screen to Main
+        //Go to Main with no screen transition
+        application().gotoMainScreenNoTransition();
     }
 }
 

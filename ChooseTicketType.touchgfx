@@ -13,114 +13,50 @@
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
           },
           {
-            "Type": "FlexButton",
-            "Name": "BusTicket",
-            "X": 129,
-            "Y": 147,
-            "Width": 236,
-            "Height": 44,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
+            "Type": "ButtonWithLabel",
+            "Name": "trainTicket",
+            "X": 120,
+            "Y": 86,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_round_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_round_inactive.png",
+            "TextId": "__SingleUse_SHLD",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "Y": 9,
-                "TextId": "__SingleUse_83WR",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 10,
-                  "Green": 10,
-                  "Blue": 10
-                },
-                "ColorPressed": {
-                  "Red": 10,
-                  "Green": 10,
-                  "Blue": 10
-                }
-              },
-              {
-                "Type": "BoxWithBorderButtonStyle",
-                "Width": 236,
-                "Height": 44,
-                "LockToFlexButtonSize": true,
-                "BorderSize": 5,
-                "ColorReleased": {
-                  "Red": 83,
-                  "Green": 151,
-                  "Blue": 153
-                },
-                "ColorPressed": {
-                  "Green": 153,
-                  "Blue": 204
-                },
-                "ColorBorderReleased": {
-                  "Red": 240,
-                  "Green": 240,
-                  "Blue": 240
-                },
-                "ColorBorderPressed": {
-                  "Red": 51,
-                  "Green": 102,
-                  "Blue": 153
-                }
-              }
-            ]
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_round_inactive.json"
           },
           {
-            "Type": "FlexButton",
-            "Name": "TrainTicket",
-            "X": 129,
-            "Y": 72,
-            "Width": 236,
-            "Height": 44,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
+            "Type": "ButtonWithLabel",
+            "Name": "busTicket",
+            "X": 120,
+            "Y": 148,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_round_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_round_inactive.png",
+            "TextId": "__SingleUse_WF0K",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "Y": 9,
-                "TextId": "__SingleUse_IEBI",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 10,
-                  "Green": 10,
-                  "Blue": 10
-                },
-                "ColorPressed": {
-                  "Red": 10,
-                  "Green": 10,
-                  "Blue": 10
-                }
-              },
-              {
-                "Type": "BoxWithBorderButtonStyle",
-                "Width": 236,
-                "Height": 44,
-                "LockToFlexButtonSize": true,
-                "BorderSize": 5,
-                "ColorReleased": {
-                  "Red": 83,
-                  "Green": 151,
-                  "Blue": 153
-                },
-                "ColorPressed": {
-                  "Green": 153,
-                  "Blue": 204
-                },
-                "ColorBorderReleased": {
-                  "Red": 240,
-                  "Green": 240,
-                  "Blue": 240
-                },
-                "ColorBorderPressed": {
-                  "Red": 51,
-                  "Green": 102,
-                  "Blue": 153
-                }
-              }
-            ]
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_round_inactive.json"
           }
         ],
         "Interactions": [
@@ -128,7 +64,7 @@
             "InteractionName": "SwitchtoTrainTicket",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "TrainTicket"
+              "TriggerComponent": "trainTicket"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -141,7 +77,7 @@
             "InteractionName": "SwitchtoBusTicket",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "BusTicket"
+              "TriggerComponent": "busTicket"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -295,13 +231,35 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonNext",
-            "X": 262,
-            "Y": 211,
-            "Width": 175,
+            "X": 359,
+            "Y": 215,
+            "Width": 110,
             "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_inactive.png",
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_inactive.png",
             "TextId": "__SingleUse_2RSW",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonCancel",
+            "X": 229,
+            "Y": 215,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_inactive.png",
+            "TextId": "__SingleUse_T9GB",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -381,6 +339,18 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "ReviewTicket"
             }
+          },
+          {
+            "InteractionName": "buttonCancelPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCancel"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Main"
+            }
           }
         ]
       },
@@ -394,6 +364,50 @@
             "Height": 480,
             "LockPosition": true,
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonCancel",
+            "X": 229,
+            "Y": 215,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_inactive.png",
+            "TextId": "__SingleUse_99TS",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonNext",
+            "X": 359,
+            "Y": 215,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_inactive.png",
+            "TextId": "__SingleUse_NDMJ",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
           },
           {
             "Type": "TextArea",
@@ -541,28 +555,6 @@
             ]
           },
           {
-            "Type": "ButtonWithLabel",
-            "Name": "busButtonNext",
-            "X": 262,
-            "Y": 211,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_inactive.png",
-            "TextId": "__SingleUse_5KIB",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0"
-          },
-          {
             "Type": "ScrollList",
             "Name": "scrollBusDest",
             "X": 12,
@@ -605,12 +597,24 @@
             "InteractionName": "busButtonNextPressed",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "busButtonNext"
+              "TriggerComponent": "buttonNext"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "ReviewTicket"
+            }
+          },
+          {
+            "InteractionName": "buttonCancelPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCancel"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Main"
             }
           }
         ]
@@ -726,25 +730,25 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "buttonBuyPressed",
+            "InteractionName": "reviewBuyButtonPressed",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonBuy"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "buttonBuyPressed"
+              "FunctionName": "reviewBuyButtonPressed"
             }
           },
           {
-            "InteractionName": "buttonCancelPressed",
+            "InteractionName": "reviewCancelButtonPressed",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonCancel"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "buttonCancelPressed"
+              "FunctionName": "reviewCancelButtonPressed"
             }
           }
         ]
@@ -824,7 +828,7 @@
         ]
       },
       {
-        "Name": "PaymentSuccess",
+        "Name": "PaymentResult",
         "Components": [
           {
             "Type": "Image",
@@ -833,20 +837,77 @@
             "Height": 480,
             "LockPosition": true,
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
-          }
-        ],
-        "Interactions": []
-      },
-      {
-        "Name": "PaymentFail",
-        "Components": [
+          },
           {
-            "Type": "Image",
-            "Name": "background",
-            "Width": 480,
-            "Height": 480,
-            "LockPosition": true,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
+            "Type": "TextArea",
+            "Name": "textPaySuccess",
+            "X": 61,
+            "Y": 41,
+            "Width": 359,
+            "Height": 72,
+            "TextId": "__SingleUse_GJAA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textCardAmount",
+            "X": 17,
+            "Y": 216,
+            "Width": 311,
+            "Height": 24,
+            "TextId": "__SingleUse_IAFP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_1PMY"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTicketPrice",
+            "X": 17,
+            "Y": 165,
+            "Width": 143,
+            "Height": 24,
+            "TextId": "__SingleUse_ME5R",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_3P0K"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textPayFailure",
+            "X": 102,
+            "Y": 41,
+            "Width": 276,
+            "Height": 72,
+            "Visible": false,
+            "TextId": "__SingleUse_0YP6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": []

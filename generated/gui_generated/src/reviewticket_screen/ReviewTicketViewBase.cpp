@@ -69,16 +69,16 @@ void ReviewTicketViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&
 {
     if (&src == &buttonBuy)
     {
-        //buttonBuyPressed
+        //reviewBuyButtonPressed
         //When buttonBuy clicked call virtual function
-        //Call buttonBuyPressed
-        buttonBuyPressed();
+        //Call reviewBuyButtonPressed
+        reviewBuyButtonPressed();
     }
     if (&src == &buttonCancel)
     {
-        //buttonCancelPressed
+        //reviewCancelButtonPressed
         //When buttonCancel clicked call virtual function
-        //Call buttonCancelPressed
-        buttonCancelPressed();
+        //Call reviewCancelButtonPressed
+        reviewCancelButtonPressed();
     }
 }

@@ -24,7 +24,7 @@ struct TypographyFontIndex
     static const touchgfx::FontId DEFAULT = 0;       // Asap_Regular_18_4bpp
     static const touchgfx::FontId TYPOGRAPHY_00 = 1; // verdana_20_4bpp
     static const touchgfx::FontId TYPOGRAPHY_01 = 1; // verdana_20_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_02 = 2; // verdana_50_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_02 = 2; // verdana_30_4bpp
     static const uint16_t NUMBER_OF_FONTS = 3;
 };
 

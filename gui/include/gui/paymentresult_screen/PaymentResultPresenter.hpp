@@ -1,17 +1,17 @@
-#ifndef PAYMENTSUCCESSPRESENTER_HPP
-#define PAYMENTSUCCESSPRESENTER_HPP
+#ifndef PAYMENTRESULTPRESENTER_HPP
+#define PAYMENTRESULTPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class PaymentSuccessView;
+class PaymentResultView;
 
-class PaymentSuccessPresenter : public touchgfx::Presenter, public ModelListener
+class PaymentResultPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    PaymentSuccessPresenter(PaymentSuccessView& v);
+    PaymentResultPresenter(PaymentResultView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~PaymentSuccessPresenter() {}
+    virtual ~PaymentResultPresenter() {}
 
 private:
-    PaymentSuccessPresenter();
+    PaymentResultPresenter();
 
-    PaymentSuccessView& view;
+    PaymentResultView& view;
 };
 
-#endif // PAYMENTSUCCESSPRESENTER_HPP
+#endif // PAYMENTRESULTPRESENTER_HPP

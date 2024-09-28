@@ -52,13 +52,21 @@ TrainTicketViewBase::TrainTicketViewBase() :
     textSelectedDest.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NJBN));
     add(textSelectedDest);
 
-    buttonNext.setXY(262, 211);
-    buttonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_DISABLED_ID));
+    buttonNext.setXY(359, 215);
+    buttonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUND_INACTIVE_ID));
     buttonNext.setLabelText(touchgfx::TypedText(T___SINGLEUSE_2RSW));
     buttonNext.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonNext.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonNext.setAction(buttonCallback);
     add(buttonNext);
+
+    buttonCancel.setXY(229, 215);
+    buttonCancel.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUND_INACTIVE_ID));
+    buttonCancel.setLabelText(touchgfx::TypedText(T___SINGLEUSE_T9GB));
+    buttonCancel.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonCancel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonCancel.setAction(buttonCallback);
+    add(buttonCancel);
 
     scrollTrainDest.setPosition(14, 20, 210, 230);
     scrollTrainDest.setHorizontal(false);
@@ -121,6 +129,13 @@ void TrainTicketViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         //When buttonNext clicked change screen to ReviewTicket
         //Go to ReviewTicket with no screen transition
         application().gotoReviewTicketScreenNoTransition();
+    }
+    if (&src == &buttonCancel)
+    {
+        //buttonCancelPressed
+        //When buttonCancel clicked change screen to Main
+        //Go to Main with no screen transition
+        application().gotoMainScreenNoTransition();
     }
 }
 

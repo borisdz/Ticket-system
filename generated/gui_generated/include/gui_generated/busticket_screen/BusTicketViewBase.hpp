@@ -9,10 +9,10 @@
 #include <gui/busticket_screen/BusTicketPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/containers/scrollers/ScrollList.hpp>
 #include <gui/containers/DestinationMenu.hpp>
 
@@ -50,12 +50,13 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image background;
+    touchgfx::ButtonWithLabel buttonCancel;
+    touchgfx::ButtonWithLabel buttonNext;
     touchgfx::TextArea textArea1;
     touchgfx::TextArea busTextSelectedDest;
     touchgfx::TextAreaWithOneWildcard busTextTicketNo;
     touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger >  >  busButtonDown;
     touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger >  >  busButtonUp;
-    touchgfx::ButtonWithLabel busButtonNext;
     touchgfx::ScrollList scrollBusDest;
     touchgfx::DrawableListItems<DestinationMenu, 7> scrollBusDestListItems;
 

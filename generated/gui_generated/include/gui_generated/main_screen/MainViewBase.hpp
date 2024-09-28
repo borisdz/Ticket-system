@@ -9,7 +9,7 @@
 #include <gui/main_screen/MainPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class MainViewBase : public touchgfx::View<MainPresenter>
 {
@@ -28,20 +28,20 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image background;
-    touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  BusTicket;
-    touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  TrainTicket;
+    touchgfx::ButtonWithLabel trainTicket;
+    touchgfx::ButtonWithLabel busTicket;
 
 private:
 
     /*
      * Callback Declarations
      */
-    touchgfx::Callback<MainViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
+    touchgfx::Callback<MainViewBase, const touchgfx::AbstractButton&> buttonCallback;
 
     /*
      * Callback Handler Declarations
      */
-    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

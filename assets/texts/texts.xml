@@ -37,6 +37,39 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_0YP6" Alignment="Left" TypographyId="Typography_02">
+        <Translation Language="GB">Payment failed!&#10;Insufficient funds.</Translation>
+      </Text>
+      <Text Id="__SingleUse_3P0K" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_ME5R" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">Ticket price: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_1PMY" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_IAFP" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">Your current card amount is: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_GJAA" Alignment="Center" TypographyId="Typography_02">
+        <Translation Language="GB">Payment successful! &#10;Please take your ticket!</Translation>
+      </Text>
+      <Text Id="__SingleUse_NDMJ" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">Next</Translation>
+      </Text>
+      <Text Id="__SingleUse_99TS" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">Cancel</Translation>
+      </Text>
+      <Text Id="__SingleUse_T9GB" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">Cancel</Translation>
+      </Text>
+      <Text Id="__SingleUse_WF0K" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Buy Bus Ticket</Translation>
+      </Text>
+      <Text Id="__SingleUse_SHLD" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Buy Train Ticket</Translation>
+      </Text>
       <Text Id="__SingleUse_719L" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB"></Translation>
       </Text>
@@ -76,9 +109,6 @@
       <Text Id="__SingleUse_CT7L" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">Number of tickets:&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_5KIB" Alignment="Center" TypographyId="Typography_00">
-        <Translation Language="GB">Next</Translation>
-      </Text>
       <Text Id="__SingleUse_2RSW" Alignment="Center" TypographyId="Typography_00">
         <Translation Language="GB">Next</Translation>
       </Text>
@@ -94,18 +124,12 @@
       <Text Id="__SingleUse_6J46" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">New Text</Translation>
       </Text>
-      <Text Id="__SingleUse_IEBI" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Train ticket</Translation>
-      </Text>
-      <Text Id="__SingleUse_83WR" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Bus ticket</Translation>
-      </Text>
     </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="Asap-Regular.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Typography_00" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0-9" WildcardCharacterRanges="0-9" />
     <Typography Id="Typography_01" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
-    <Typography Id="Typography_02" Font="verdana.ttf" Size="50" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="Typography_02" Font="verdana.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
   </Typographies>
 </TextDatabase>

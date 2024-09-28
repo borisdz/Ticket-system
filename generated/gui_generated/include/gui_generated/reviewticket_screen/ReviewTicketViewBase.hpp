@@ -23,11 +23,11 @@ public:
     /*
      * Virtual Action Handlers
      */
-    virtual void buttonBuyPressed()
+    virtual void reviewBuyButtonPressed()
     {
         // Override and implement this function in ReviewTicket
     }
-    virtual void buttonCancelPressed()
+    virtual void reviewCancelButtonPressed()
     {
         // Override and implement this function in ReviewTicket
     }
