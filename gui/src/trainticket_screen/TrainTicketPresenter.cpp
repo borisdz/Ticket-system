@@ -26,6 +26,6 @@ void TrainTicketPresenter::destinationSelected(int16_t itemSelected){
 	model->setDestinationSelected(itemSelected);
 }
 
-int16_t TrainTicketPresenter::getTicketCount(){
+int16_t TrainTicketPresenter::getTrainTicketCount(){
 	return model->getTicketCount();
 }

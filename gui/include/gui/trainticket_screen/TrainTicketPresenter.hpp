@@ -29,7 +29,7 @@ public:
     virtual ~TrainTicketPresenter() {}
 
     void saveTicketCount(int16_t ticketCount);
-    int16_t getTicketCount();
+    int16_t getTrainTicketCount();
     virtual void destinationSelected(int16_t itemSelected);
 private:
     TrainTicketPresenter();

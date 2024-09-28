@@ -7,7 +7,7 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 MainViewBase::MainViewBase() :
-    flexButtonCallback(this, &MainViewBase::flexButtonCallbackHandler)
+    buttonCallback(this, &MainViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -17,25 +17,21 @@ MainViewBase::MainViewBase() :
     background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X480_SPOTLIGHTS_ID));
     add(background);
 
-    BusTicket.setBoxWithBorderPosition(0, 0, 236, 44);
-    BusTicket.setBorderSize(5);
-    BusTicket.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(83, 151, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(240, 240, 240), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    BusTicket.setText(TypedText(T___SINGLEUSE_83WR));
-    BusTicket.setTextPosition(0, 9, 236, 44);
-    BusTicket.setTextColors(touchgfx::Color::getColorFromRGB(10, 10, 10), touchgfx::Color::getColorFromRGB(10, 10, 10));
-    BusTicket.setAction(flexButtonCallback);
-    BusTicket.setPosition(129, 147, 236, 44);
-    add(BusTicket);
+    trainTicket.setXY(120, 86);
+    trainTicket.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_INACTIVE_ID));
+    trainTicket.setLabelText(touchgfx::TypedText(T___SINGLEUSE_SHLD));
+    trainTicket.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    trainTicket.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    trainTicket.setAction(buttonCallback);
+    add(trainTicket);
 
-    TrainTicket.setBoxWithBorderPosition(0, 0, 236, 44);
-    TrainTicket.setBorderSize(5);
-    TrainTicket.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(83, 151, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(240, 240, 240), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    TrainTicket.setText(TypedText(T___SINGLEUSE_IEBI));
-    TrainTicket.setTextPosition(0, 9, 236, 44);
-    TrainTicket.setTextColors(touchgfx::Color::getColorFromRGB(10, 10, 10), touchgfx::Color::getColorFromRGB(10, 10, 10));
-    TrainTicket.setAction(flexButtonCallback);
-    TrainTicket.setPosition(129, 72, 236, 44);
-    add(TrainTicket);
+    busTicket.setXY(120, 148);
+    busTicket.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_INACTIVE_ID));
+    busTicket.setLabelText(touchgfx::TypedText(T___SINGLEUSE_WF0K));
+    busTicket.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    busTicket.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    busTicket.setAction(buttonCallback);
+    add(busTicket);
 }
 
 MainViewBase::~MainViewBase()
@@ -48,19 +44,19 @@ void MainViewBase::setupScreen()
 
 }
 
-void MainViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &TrainTicket)
+    if (&src == &trainTicket)
     {
         //SwitchtoTrainTicket
-        //When TrainTicket clicked change screen to TrainTicket
+        //When trainTicket clicked change screen to TrainTicket
         //Go to TrainTicket with screen transition towards East
         application().gotoTrainTicketScreenSlideTransitionEast();
     }
-    if (&src == &BusTicket)
+    if (&src == &busTicket)
     {
         //SwitchtoBusTicket
-        //When BusTicket clicked change screen to BusTicket
+        //When busTicket clicked change screen to BusTicket
         //Go to BusTicket with screen transition towards East
         application().gotoBusTicketScreenSlideTransitionEast();
     }

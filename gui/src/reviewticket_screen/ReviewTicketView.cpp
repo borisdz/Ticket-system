@@ -28,25 +28,26 @@ void ReviewTicketView::setSelectedDestItem(int16_t itemSelected){
 		default:
 			break;
 		case 0:
-			textDestination.setWildcard(touchgfx::TypedText(T_SKOPJE).getText());
+			selectedDestination.setTypedText(TypedText(T_SKOPJE));
 			break;
 		case 1:
-			textDestination.setWildcard(touchgfx::TypedText(T_DRACHEVO).getText());
+			selectedDestination.setTypedText(TypedText(T_DRACHEVO));
 			break;
 		case 2:
-			textDestination.setWildcard(touchgfx::TypedText(T_VELES).getText());
+			selectedDestination.setTypedText(TypedText(T_VELES));
 			break;
 		case 3:
-			textDestination.setWildcard(touchgfx::TypedText(T_GRADSKO).getText());
+			selectedDestination.setTypedText(TypedText(T_GRADSKO));
 			break;
 		case 4:
-			textDestination.setWildcard(touchgfx::TypedText(T_NEGOTINO).getText());
+			selectedDestination.setTypedText(TypedText(T_NEGOTINO));
 			break;
 		case 5:
-			textDestination.setWildcard(touchgfx::TypedText(T_DEMIRKAPIJA).getText());
+			selectedDestination.setTypedText(TypedText(T_DEMIRKAPIJA));
 			break;
 		case 6:
-			textDestination.setWildcard(touchgfx::TypedText(T_GEVGELIJA).getText());
+			selectedDestination.setTypedText(TypedText(T_GEVGELIJA));
 			break;
 		}
+	selectedDestination.invalidate();
 }

@@ -55,6 +55,7 @@ protected:
     touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger >  >  buttonUp;
     touchgfx::TextArea textSelectedDest;
     touchgfx::ButtonWithLabel buttonNext;
+    touchgfx::ButtonWithLabel buttonCancel;
     touchgfx::ScrollList scrollTrainDest;
     touchgfx::DrawableListItems<DestinationMenu, 7> scrollTrainDestListItems;
     touchgfx::TextArea textArea1;

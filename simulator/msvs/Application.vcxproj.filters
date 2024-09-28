@@ -247,29 +247,17 @@
     <Filter Include="Header Files\generated\gui_generated\trainticket_screen">
       <UniqueIdentifier>C8E52289-70E5-C947-2C58-06155192543D</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\paymentsuccess_screen">
-      <UniqueIdentifier>1A1FF6E3-3211-DF5E-744A-1083C630C68B</UniqueIdentifier>
+    <Filter Include="Header Files\gui\paymentresult_screen">
+      <UniqueIdentifier>21A6FE56-6B70-4B20-C21A-CD10BCA61FFD</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\paymentsuccess_screen">
-      <UniqueIdentifier>DEDD0B20-B943-46B7-ADB9-0A98A5745E5C</UniqueIdentifier>
+    <Filter Include="Source Files\gui\paymentresult_screen">
+      <UniqueIdentifier>BDF389E8-2F99-4446-3431-2D6FEB30DACF</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\paymentfail_screen">
-      <UniqueIdentifier>6088C400-12A9-DABF-92C8-D9FFDC07F2FA</UniqueIdentifier>
+    <Filter Include="Header Files\generated\gui_generated\paymentresult_screen">
+      <UniqueIdentifier>1C1C7C17-8B14-3EC2-322F-D49F90236216</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\paymentfail_screen">
-      <UniqueIdentifier>0B35A67A-0390-60E9-81CF-8D37652A0865</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\paymentfail_screen">
-      <UniqueIdentifier>D388A3FA-322C-F730-54B2-5821E9AC14F6</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\paymentfail_screen">
-      <UniqueIdentifier>CE94AE8E-104D-F8C0-687F-F660B7D82C49</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\paymentsuccess_screen">
-      <UniqueIdentifier>610806C8-7C4F-F8A6-7812-B61E13AE483A</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\paymentsuccess_screen">
-      <UniqueIdentifier>044242E4-8669-AA6F-C525-F7C1B4AB94A4</UniqueIdentifier>
+    <Filter Include="Source Files\generated\gui_generated\paymentresult_screen">
+      <UniqueIdentifier>D55390FB-E89D-33A2-ABB5-BB9E0C78EF32</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -354,23 +342,14 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\DestinationMenuBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\paymentfail_screen\PaymentFailPresenter.cpp">
-      <Filter>Source Files\gui\paymentfail_screen</Filter>
+    <ClCompile Include="..\..\gui\src\paymentresult_screen\PaymentResultPresenter.cpp">
+      <Filter>Source Files\gui\paymentresult_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\paymentfail_screen\PaymentFailView.cpp">
-      <Filter>Source Files\gui\paymentfail_screen</Filter>
+    <ClCompile Include="..\..\gui\src\paymentresult_screen\PaymentResultView.cpp">
+      <Filter>Source Files\gui\paymentresult_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\paymentfail_screen\PaymentFailViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\paymentfail_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\paymentsuccess_screen\PaymentSuccessPresenter.cpp">
-      <Filter>Source Files\gui\paymentsuccess_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\paymentsuccess_screen\PaymentSuccessView.cpp">
-      <Filter>Source Files\gui\paymentsuccess_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\paymentsuccess_screen\PaymentSuccessViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\paymentsuccess_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\paymentresult_screen\PaymentResultViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\paymentresult_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -868,23 +847,14 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DestinationMenuBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\paymentfail_screen\PaymentFailPresenter.hpp">
-      <Filter>Header Files\gui\paymentfail_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\paymentresult_screen\PaymentResultPresenter.hpp">
+      <Filter>Header Files\gui\paymentresult_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\paymentfail_screen\PaymentFailView.hpp">
-      <Filter>Header Files\gui\paymentfail_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\paymentresult_screen\PaymentResultView.hpp">
+      <Filter>Header Files\gui\paymentresult_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\paymentfail_screen\PaymentFailViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\paymentfail_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\paymentsuccess_screen\PaymentSuccessPresenter.hpp">
-      <Filter>Header Files\gui\paymentsuccess_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\paymentsuccess_screen\PaymentSuccessView.hpp">
-      <Filter>Header Files\gui\paymentsuccess_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\paymentsuccess_screen\PaymentSuccessViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\paymentsuccess_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\paymentresult_screen\PaymentResultViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\paymentresult_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -11,9 +11,9 @@ void TrainTicketView::setupScreen(){
 	scrollTrainDest.setItemSelectedCallback(scrollTrainDest_ItemSelectedCallback);
 	TrainTicketViewBase::setupScreen();
 
-	ticketCount = presenter->getTicketCount();
+	trainTicketCount = presenter->getTrainTicketCount();
 
-	Unicode::snprintf(textTicketNoBuffer, TEXTTICKETNO_SIZE, "%d", ticketCount);
+	Unicode::snprintf(textTicketNoBuffer, TEXTTICKETNO_SIZE, "%d", trainTicketCount);
 }
 
 void TrainTicketView::tearDownScreen() {
@@ -57,19 +57,19 @@ void TrainTicketView::scrollTrainDest_ItemSelectedHandler(int16_t itemSelected) 
 }
 
 void TrainTicketView::buttonUpPressed() {
-	ticketCount++;
+	trainTicketCount++;
 
-	Unicode::snprintf(textTicketNoBuffer, TEXTTICKETNO_SIZE, "%d", ticketCount);
-	presenter->saveTicketCount(ticketCount);
+	Unicode::snprintf(textTicketNoBuffer, TEXTTICKETNO_SIZE, "%d", trainTicketCount);
+	presenter->saveTicketCount(trainTicketCount);
 
 	textTicketNo.invalidate();
 }
 
 void TrainTicketView::buttonDownPressed() {
-	ticketCount--;
+	trainTicketCount--;
 
-	Unicode::snprintf(textTicketNoBuffer, TEXTTICKETNO_SIZE, "%d", ticketCount);
-	presenter->saveTicketCount(ticketCount);
+	Unicode::snprintf(textTicketNoBuffer, TEXTTICKETNO_SIZE, "%d", trainTicketCount);
+	presenter->saveTicketCount(trainTicketCount);
 
 	textTicketNo.invalidate();
 }

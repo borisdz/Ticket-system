@@ -79,7 +79,7 @@ public:
     void saveTicketCount(int16_t saveTicketCount);
     int16_t getTicketCount();
     void setDestinationSelected(int itemSelected);
-    int getTrainTicketScrollDestItem(void);
+    int getTicketScrollDestItem(void);
 protected:
     /**
      * Pointer to the currently active presenter.
@@ -87,7 +87,7 @@ protected:
     ModelListener* modelListener;
 
     int16_t ticketCount;
-    int trainTicketDestinationSelected;
+    int ticketDestinationSelected;
 };
 
 #endif /* MODEL_HPP */

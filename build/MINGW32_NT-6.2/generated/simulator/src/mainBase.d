@@ -83,6 +83,14 @@ build/MINGW32_NT-6.2/generated/simulator/src/mainBase.o: \
  gui/include/gui/model/ModelListener.hpp \
  touchgfx/framework/include/touchgfx/widgets/Box.hpp \
  touchgfx/framework/include/touchgfx/widgets/Image.hpp \
+ touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
+ touchgfx/framework/include/touchgfx/widgets/Button.hpp \
+ touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ gui/include/gui/trainticket_screen/TrainTicketView.hpp \
+ generated/gui_generated/include/gui_generated/trainticket_screen/TrainTicketViewBase.hpp \
+ gui/include/gui/trainticket_screen/TrainTicketPresenter.hpp \
+ touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
+ touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp \
  touchgfx/framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp \
  touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp \
@@ -94,20 +102,12 @@ build/MINGW32_NT-6.2/generated/simulator/src/mainBase.o: \
  touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp \
  touchgfx/framework/include/touchgfx/containers/buttons/RepeatButtonTrigger.hpp \
  touchgfx/framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp \
- touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  touchgfx/framework/include/touchgfx/containers/buttons/TiledImageButtonStyle.hpp \
  touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
  touchgfx/framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp \
  touchgfx/framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp \
  touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp \
- touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
- gui/include/gui/trainticket_screen/TrainTicketView.hpp \
- generated/gui_generated/include/gui_generated/trainticket_screen/TrainTicketViewBase.hpp \
- gui/include/gui/trainticket_screen/TrainTicketPresenter.hpp \
- touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
- touchgfx/framework/include/touchgfx/widgets/Button.hpp \
- touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
  touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp \
  touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp \
  touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
@@ -116,8 +116,6 @@ build/MINGW32_NT-6.2/generated/simulator/src/mainBase.o: \
  gui/include/gui/busticket_screen/BusTicketView.hpp \
  generated/gui_generated/include/gui_generated/busticket_screen/BusTicketViewBase.hpp \
  gui/include/gui/busticket_screen/BusTicketPresenter.hpp \
- touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp \
- touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp \
  gui/include/gui/reviewticket_screen/ReviewTicketView.hpp \
  generated/gui_generated/include/gui_generated/reviewticket_screen/ReviewTicketViewBase.hpp \
  gui/include/gui/reviewticket_screen/ReviewTicketPresenter.hpp \
@@ -325,6 +323,22 @@ touchgfx/framework/include/touchgfx/widgets/Box.hpp:
 
 touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 
+touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
+
+touchgfx/framework/include/touchgfx/widgets/Button.hpp:
+
+touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
+
+gui/include/gui/trainticket_screen/TrainTicketView.hpp:
+
+generated/gui_generated/include/gui_generated/trainticket_screen/TrainTicketViewBase.hpp:
+
+gui/include/gui/trainticket_screen/TrainTicketPresenter.hpp:
+
+touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
+
+touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
+
 touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp:
 
 touchgfx/framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp:
@@ -347,8 +361,6 @@ touchgfx/framework/include/touchgfx/containers/buttons/RepeatButtonTrigger.hpp:
 
 touchgfx/framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp:
 
-touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
-
 touchgfx/framework/include/touchgfx/containers/buttons/TiledImageButtonStyle.hpp:
 
 touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
@@ -359,21 +371,7 @@ touchgfx/framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp:
 
 touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp:
 
-touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
-
 touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
-
-gui/include/gui/trainticket_screen/TrainTicketView.hpp:
-
-generated/gui_generated/include/gui_generated/trainticket_screen/TrainTicketViewBase.hpp:
-
-gui/include/gui/trainticket_screen/TrainTicketPresenter.hpp:
-
-touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
-
-touchgfx/framework/include/touchgfx/widgets/Button.hpp:
-
-touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
 touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp:
 
@@ -390,10 +388,6 @@ gui/include/gui/busticket_screen/BusTicketView.hpp:
 generated/gui_generated/include/gui_generated/busticket_screen/BusTicketViewBase.hpp:
 
 gui/include/gui/busticket_screen/BusTicketPresenter.hpp:
-
-touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp:
-
-touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp:
 
 gui/include/gui/reviewticket_screen/ReviewTicketView.hpp:
 
