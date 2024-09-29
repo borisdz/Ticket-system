@@ -1,0 +1,4 @@
+../Core/Src/user.c:12:6:initializeUsers	1
+../Core/Src/user.c:23:9:findUserByRFID	3
+../Core/Src/user.c:34:6:updateUserBalance	2
+../Core/Src/user.c:41:5:getBalance	1
