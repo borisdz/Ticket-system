@@ -24,6 +24,9 @@
 /* USER CODE BEGIN Includes */
 #include "rc522.h"
 #include "string.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "user.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -61,7 +64,7 @@ const osThreadAttr_t readRFID_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for sendDataH */
-osThreadId_t sendDataHHandle;
+osThreadId_t sendDataHandle;
 const osThreadAttr_t sendDataH_attributes = {
   .name = "sendDataH",
   .stack_size = 300 * 4,
@@ -76,6 +79,8 @@ const osMessageQueueAttr_t dataQueue_attributes = {
 uint8_t status;
 uint8_t str[MAX_LEN]; // MAX_LEN=16
 uint8_t sNum[5];
+h750Data boardData;
+answerData answer;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -103,7 +108,7 @@ void StartSendData(void *argument);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	initializeUsers();
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -162,7 +167,7 @@ int main(void)
   readRFIDHandle = osThreadNew(StartReadRFID, NULL, &readRFID_attributes);
 
   /* creation of sendDataH */
-  sendDataHHandle = osThreadNew(StartSendData, NULL, &sendDataH_attributes);
+  sendDataHandle = osThreadNew(StartSendData, NULL, &sendDataH_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -378,11 +383,13 @@ static void MX_GPIO_Init(void)
 void StartWaitingSignalTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
+	h750Data firstData;
   /* Infinite loop */
   for(;;)
   {
-	  HAL_UART_Receive(&huart1, f, 8, 1000);
-	  if(f == 1){
+	  HAL_UART_Receive(&huart1, (uint8_t *)&firstData, sizeof(firstData), 100);
+	  if(boardData.len>0){
+		  osMessageQueuePut(dataQueueHandle, &firstData, 0, 0);
 		  xTaskNotifyGive(readRFIDHandle);
 		  ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 	  }
@@ -401,21 +408,34 @@ void StartWaitingSignalTask(void *argument)
 void StartReadRFID(void *argument)
 {
   /* USER CODE BEGIN StartReadRFID */
+	h750Data bData;
+	answerData ans;
   /* Infinite loop */
   for(;;)
   {
 	  ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
+
+	  osMessageQueueGet(dataQueueHandle,&bData,0,0);
 
 	  status = MFRC522_Request(PICC_REQIDL,str);
 	  status = MFRC522_Anticoll(str);
 	  memcpy(sNum,str,5);
 	  HAL_Delay(100);
 
-//	  for(int i=0;i<sizeof(sNum);i++){
-//		  xQueueSendToBack(dataQueueHandle,&sNum[i],0);
-//	  }
-	  xQueueSendToBack(dataQueueHandle,&sNum,0);
+//	  h750Data data;
+//	  osMessageQueueGet(dataQueueHandle, &data, 0, 0);
+//	  answerData ans;
+	  if(getBalance(sNum)<bData.totalPrice){
+		  ans.flag=0;
+		  ans.updatedFunds=getBalance(sNum);
+	  }else{
+		  updateUserBalance(sNum, 0-bData.totalPrice);
+		  ans.flag=1;
+		  ans.updatedFunds=getBalance(sNum);
+	  }
 
+
+	  osMessageQueuePut(dataQueueHandle, &ans, 0,0);
 	  xTaskNotifyGive(sendDataHandle);
     osDelay(1);
   }
@@ -432,15 +452,17 @@ void StartReadRFID(void *argument)
 void StartSendData(void *argument)
 {
   /* USER CODE BEGIN StartSendData */
-	uint8_t data[5];
+	answerData finalAns;
   /* Infinite loop */
   for(;;)
   {
 	  ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 
-	  xQueueReceive(dataQueueHandle, &data,0);
+	  osMessageQueueGet(dataQueueHandle, &finalAns, 0, 0);
 
-	  HAL_UART_Transmit(&huart1, data, sizeof(data),1000);
+	  //xQueueReceive(dataQueueHandle, &data,0);
+
+	  HAL_UART_Transmit(&huart1, (uint8_t *)&finalAns, sizeof(finalAns),100);
 
 	  xTaskNotifyGive(waitingSignalHandle);
     osDelay(1);
