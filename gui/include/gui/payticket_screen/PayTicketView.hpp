@@ -11,6 +11,7 @@ public:
     virtual ~PayTicketView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void buttonPaymentCancelled();
 protected:
 };
 

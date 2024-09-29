@@ -16,3 +16,12 @@ void PayTicketPresenter::deactivate()
 {
 
 }
+
+
+void PayTicketPresenter::saveTicketCount(int16_t ticketCount){
+	model->saveTicketCount(ticketCount);
+}
+
+void PayTicketPresenter::setDestinationSelected(int16_t destinationSelected){
+	model->setDestinationSelected(destinationSelected);
+}

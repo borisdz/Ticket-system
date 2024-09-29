@@ -15,8 +15,11 @@ public:
     virtual void scrollTrainDestUpdateItem(DestinationMenu& item, int16_t itemIndex);
     virtual void buttonUpPressed();
     virtual void buttonDownPressed();
+    virtual void trainButtonCancelPressed();
 protected:
     int16_t trainTicketCount;
+    int trainBaseSelectedPrice;
+    int trainTotalTicketPrice;
     Callback<TrainTicketView, int16_t> scrollTrainDest_ItemSelectedCallback;
     void scrollTrainDest_ItemSelectedHandler(int16_t itemSelected);
 };

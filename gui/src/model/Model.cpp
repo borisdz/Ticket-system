@@ -36,7 +36,19 @@
 #include <gui/model/ModelListener.hpp>
 #include <touchgfx/hal/types.hpp>
 
-Model::Model() : modelListener(0),ticketCount(0)
+#ifndef SIMULATOR
+#include "main.h"
+#include <string.h>
+
+extern "C"
+{
+	extern UART_HandleTypeDef huart1;
+}
+#endif
+
+
+Model::Model() :
+modelListener(0),ticketCount(0),ticketBaseSelectedPrice(0),totalTicketPrice(0)
 {
 }
 
@@ -59,4 +71,18 @@ int16_t Model::getTicketCount(){
 
 void Model::saveTicketCount(int16_t saveTicketCount){
 	ticketCount=saveTicketCount;
+}
+
+void Model::setTicketBaseSelectedPrice(int baseTicketPrice){
+	ticketBaseSelectedPrice=baseTicketPrice;
+}
+
+int Model::getTotalTicketPrice(){
+	return ticketBaseSelectedPrice*ticketCount;
+}
+
+void Model::sendDataH750(char *data){
+#ifndef SIMULATOR
+	HAL_UART_Transmit(&huart1, (uint8_t *)data, strlen(data), 100);
+#endif
 }

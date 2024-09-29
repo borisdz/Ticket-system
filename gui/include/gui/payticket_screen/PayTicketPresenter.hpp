@@ -26,6 +26,9 @@ public:
     virtual void deactivate();
 
     virtual ~PayTicketPresenter() {}
+    virtual void saveTicketCount(int16_t ticketCount);
+    virtual void setDestinationSelected(int16_t destinationSelected);
+
 
 private:
     PayTicketPresenter();

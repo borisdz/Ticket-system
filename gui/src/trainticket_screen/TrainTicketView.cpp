@@ -31,29 +31,36 @@ void TrainTicketView::scrollTrainDest_ItemSelectedHandler(int16_t itemSelected) 
 		break;
 	case 0:
 		textSelectedDest.setTypedText(TypedText(T_SKOPJE));
+		presenter->setTrainBaseSelectedPrice(280);
 		break;
 	case 1:
 		textSelectedDest.setTypedText(TypedText(T_DRACHEVO));
+		presenter->setTrainBaseSelectedPrice(270);
 		break;
 	case 2:
 		textSelectedDest.setTypedText(TypedText(T_VELES));
+		presenter->setTrainBaseSelectedPrice(200);
 		break;
 	case 3:
 		textSelectedDest.setTypedText(TypedText(T_GRADSKO));
+		presenter->setTrainBaseSelectedPrice(190);
 		break;
 	case 4:
 		textSelectedDest.setTypedText(TypedText(T_NEGOTINO));
+		presenter->setTrainBaseSelectedPrice(180);
 		break;
 	case 5:
 		textSelectedDest.setTypedText(TypedText(T_DEMIRKAPIJA));
+		presenter->setTrainBaseSelectedPrice(150);
 		break;
 	case 6:
 		textSelectedDest.setTypedText(TypedText(T_GEVGELIJA));
+		presenter->setTrainBaseSelectedPrice(100);
 		break;
 	}
 	textSelectedDest.invalidate();
 
-	presenter->destinationSelected(itemSelected);
+	presenter->setDestinationSelected(itemSelected);
 }
 
 void TrainTicketView::buttonUpPressed() {
@@ -61,7 +68,6 @@ void TrainTicketView::buttonUpPressed() {
 
 	Unicode::snprintf(textTicketNoBuffer, TEXTTICKETNO_SIZE, "%d", trainTicketCount);
 	presenter->saveTicketCount(trainTicketCount);
-
 	textTicketNo.invalidate();
 }
 
@@ -72,4 +78,11 @@ void TrainTicketView::buttonDownPressed() {
 	presenter->saveTicketCount(trainTicketCount);
 
 	textTicketNo.invalidate();
+}
+
+void TrainTicketView::trainButtonCancelPressed(){
+		presenter->saveTicketCount(0);
+		presenter->setDestinationSelected(1);
+		presenter->setTrainBaseSelectedPrice(0);
+		application().gotoMainScreenNoTransition();
 }

@@ -39,6 +39,10 @@ public:
     {
         // Override and implement this function in BusTicket
     }
+    virtual void busButtonCancelPressed()
+    {
+        // Override and implement this function in BusTicket
+    }
 
 protected:
     FrontendApplication& application() {

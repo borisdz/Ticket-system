@@ -14,3 +14,11 @@ void PayTicketView::tearDownScreen()
 {
     PayTicketViewBase::tearDownScreen();
 }
+
+
+void PayTicketView::buttonPaymentCancelled(){
+	presenter->saveTicketCount(0);
+	presenter->setDestinationSelected(1);
+
+	application().gotoMainScreenNoTransition();
+}

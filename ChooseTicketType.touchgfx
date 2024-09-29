@@ -218,7 +218,7 @@
             "X": 262,
             "Y": 170,
             "Width": 175,
-            "Height": 22,
+            "Height": 21,
             "TextId": "__SingleUse_NJBN",
             "TextRotation": "0",
             "Color": {
@@ -294,7 +294,7 @@
             "X": 249,
             "Y": 136,
             "Width": 166,
-            "Height": 22,
+            "Height": 21,
             "TextId": "__SingleUse_ED33",
             "TextRotation": "0",
             "Color": {
@@ -341,10 +341,20 @@
             }
           },
           {
-            "InteractionName": "buttonCancelPressed",
+            "InteractionName": "trainButtonCancelPressed",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonCancel"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "trainButtonCancelPressed"
+            }
+          },
+          {
+            "InteractionName": "goToMainScreen",
+            "Trigger": {
+              "Type": "TriggerNone"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -612,9 +622,8 @@
               "TriggerComponent": "buttonCancel"
             },
             "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Main"
+              "Type": "ActionCustom",
+              "FunctionName": "busButtonCancelPressed"
             }
           }
         ]
@@ -649,7 +658,7 @@
             "Type": "TextArea",
             "Name": "textNoTickets",
             "X": 17,
-            "Y": 112,
+            "Y": 79,
             "Width": 207,
             "Height": 24,
             "TextId": "__SingleUse_10CM",
@@ -725,6 +734,26 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTotalPrice",
+            "X": 17,
+            "Y": 136,
+            "Width": 223,
+            "Height": 31,
+            "TextId": "__SingleUse_VNPC",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_4NFB",
+              "UseBuffer": true,
+              "BufferSize": 30
             }
           }
         ],

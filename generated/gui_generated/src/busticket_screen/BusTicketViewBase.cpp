@@ -133,9 +133,9 @@ void BusTicketViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& sr
     if (&src == &buttonCancel)
     {
         //buttonCancelPressed
-        //When buttonCancel clicked change screen to Main
-        //Go to Main with no screen transition
-        application().gotoMainScreenNoTransition();
+        //When buttonCancel clicked call virtual function
+        //Call busButtonCancelPressed
+        busButtonCancelPressed();
     }
 }
 

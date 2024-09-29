@@ -31,7 +31,11 @@ public:
     int16_t getTicketCount(){
     	return model->getTicketCount();
     }
-
+    virtual void saveTicketCount(int16_t ticketCount);
+    virtual void setDestinationSelected(int16_t destinationSelected);
+    int getTotalTicketPrice();
+    void setBaseTicketSelectedPrice(int baseTicketPrice);
+    virtual void sendDataH750(char *data);
 private:
     ReviewTicketPresenter();
 

@@ -23,7 +23,7 @@ ReviewTicketViewBase::ReviewTicketViewBase() :
     textDestination.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XLKZ));
     add(textDestination);
 
-    textNoTickets.setXY(17, 112);
+    textNoTickets.setXY(17, 79);
     textNoTickets.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textNoTickets.setLinespacing(0);
     Unicode::snprintf(textNoTicketsBuffer, TEXTNOTICKETS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ZXT1).getText());
@@ -53,6 +53,14 @@ ReviewTicketViewBase::ReviewTicketViewBase() :
     selectedDestination.setLinespacing(0);
     selectedDestination.setTypedText(touchgfx::TypedText(T___SINGLEUSE_719L));
     add(selectedDestination);
+
+    textTotalPrice.setPosition(17, 136, 223, 31);
+    textTotalPrice.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textTotalPrice.setLinespacing(0);
+    Unicode::snprintf(textTotalPriceBuffer, TEXTTOTALPRICE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_4NFB).getText());
+    textTotalPrice.setWildcard(textTotalPriceBuffer);
+    textTotalPrice.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VNPC));
+    add(textTotalPrice);
 }
 
 ReviewTicketViewBase::~ReviewTicketViewBase()

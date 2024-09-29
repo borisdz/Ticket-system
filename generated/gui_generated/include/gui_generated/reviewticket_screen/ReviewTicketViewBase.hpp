@@ -47,12 +47,15 @@ protected:
     touchgfx::ButtonWithLabel buttonBuy;
     touchgfx::ButtonWithLabel buttonCancel;
     touchgfx::TextArea selectedDestination;
+    touchgfx::TextAreaWithOneWildcard textTotalPrice;
 
     /*
      * Wildcard Buffers
      */
     static const uint16_t TEXTNOTICKETS_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textNoTicketsBuffer[TEXTNOTICKETS_SIZE];
+    static const uint16_t TEXTTOTALPRICE_SIZE = 30;
+    touchgfx::Unicode::UnicodeChar textTotalPriceBuffer[TEXTTOTALPRICE_SIZE];
 
 private:
 

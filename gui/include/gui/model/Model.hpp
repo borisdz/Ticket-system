@@ -80,6 +80,9 @@ public:
     int16_t getTicketCount();
     void setDestinationSelected(int itemSelected);
     int getTicketScrollDestItem(void);
+    void setTicketBaseSelectedPrice(int baseTicketPrice);
+    int getTotalTicketPrice();
+    void sendDataH750(char *data);
 protected:
     /**
      * Pointer to the currently active presenter.
@@ -88,6 +91,8 @@ protected:
 
     int16_t ticketCount;
     int ticketDestinationSelected;
+    int ticketBaseSelectedPrice;
+	int totalTicketPrice;
 };
 
 #endif /* MODEL_HPP */

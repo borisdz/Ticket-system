@@ -37,6 +37,12 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_4NFB" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_VNPC" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">Total price: &lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_0YP6" Alignment="Left" TypographyId="Typography_02">
         <Translation Language="GB">Payment failed!&#10;Insufficient funds.</Translation>
       </Text>
@@ -104,7 +110,7 @@
         <Translation Language="GB">Destination:</Translation>
       </Text>
       <Text Id="__SingleUse_H2HS" Alignment="Left" TypographyId="Typography_00">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">1</Translation>
       </Text>
       <Text Id="__SingleUse_CT7L" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">Number of tickets:&lt;value&gt;</Translation>
@@ -116,7 +122,7 @@
         <Translation Language="GB">(Select a city from list)</Translation>
       </Text>
       <Text Id="__SingleUse_QQ70" Alignment="Left" TypographyId="Typography_00">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">1</Translation>
       </Text>
       <Text Id="__SingleUse_QORF" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">Number of tickets:&lt;value&gt;</Translation>

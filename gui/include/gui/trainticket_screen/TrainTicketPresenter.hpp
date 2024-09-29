@@ -30,7 +30,8 @@ public:
 
     void saveTicketCount(int16_t ticketCount);
     int16_t getTrainTicketCount();
-    virtual void destinationSelected(int16_t itemSelected);
+    virtual void setDestinationSelected(int16_t itemSelected);
+    virtual void setTrainBaseSelectedPrice(int baseTicketPrice);
 private:
     TrainTicketPresenter();
 
