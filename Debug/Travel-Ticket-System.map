@@ -260,7 +260,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x264 ./Core/Src/freertos.o
  .debug_macro   0x00000000       0x90 ./Core/Src/freertos.o
  .debug_macro   0x00000000      0x5a0 ./Core/Src/freertos.o
- .debug_macro   0x00000000      0x2ab ./Core/Src/freertos.o
+ .debug_macro   0x00000000      0x2b0 ./Core/Src/freertos.o
  .debug_line    0x00000000      0xbff ./Core/Src/freertos.o
  .debug_str     0x00000000   0x19bc4d ./Core/Src/freertos.o
  .comment       0x00000000       0x44 ./Core/Src/freertos.o
@@ -455,7 +455,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x264 ./Core/Src/main.o
  .debug_macro   0x00000000       0x90 ./Core/Src/main.o
  .debug_macro   0x00000000      0x5a0 ./Core/Src/main.o
- .debug_macro   0x00000000      0x2ab ./Core/Src/main.o
+ .debug_macro   0x00000000      0x2b0 ./Core/Src/main.o
  .debug_macro   0x00000000       0x35 ./Core/Src/main.o
  .debug_macro   0x00000000      0x15a ./Core/Src/main.o
  .debug_macro   0x00000000       0xc9 ./Core/Src/main.o
@@ -666,7 +666,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x264 ./Core/Src/stm32h7xx_hal_msp.o
  .debug_macro   0x00000000       0x90 ./Core/Src/stm32h7xx_hal_msp.o
  .debug_macro   0x00000000      0x5a0 ./Core/Src/stm32h7xx_hal_msp.o
- .debug_macro   0x00000000      0x2ab ./Core/Src/stm32h7xx_hal_msp.o
+ .debug_macro   0x00000000      0x2b0 ./Core/Src/stm32h7xx_hal_msp.o
  .group         0x00000000        0xc ./Core/Src/stm32h7xx_hal_timebase_tim.o
  .group         0x00000000        0xc ./Core/Src/stm32h7xx_hal_timebase_tim.o
  .group         0x00000000        0xc ./Core/Src/stm32h7xx_hal_timebase_tim.o
@@ -1018,7 +1018,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x264 ./Core/Src/stm32h7xx_it.o
  .debug_macro   0x00000000       0x90 ./Core/Src/stm32h7xx_it.o
  .debug_macro   0x00000000      0x5a0 ./Core/Src/stm32h7xx_it.o
- .debug_macro   0x00000000      0x2ab ./Core/Src/stm32h7xx_it.o
+ .debug_macro   0x00000000      0x2b0 ./Core/Src/stm32h7xx_it.o
  .group         0x00000000        0xc ./Core/Src/syscalls.o
  .group         0x00000000        0xc ./Core/Src/syscalls.o
  .group         0x00000000        0xc ./Core/Src/syscalls.o

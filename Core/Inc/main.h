@@ -59,6 +59,11 @@ typedef struct{
 	int totalPrice;
 	int ticketNo;
 }scData;
+
+typedef struct{
+	int updatedFunds;
+	uint8_t flag;
+}answerData;
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

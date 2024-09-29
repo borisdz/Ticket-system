@@ -45,18 +45,18 @@
 #if defined ( __ICCARM__ ) /*!< IAR Compiler */
 #pragma location=0x30000000
 ETH_DMADescTypeDef  DMARxDscrTab[ETH_RX_DESC_CNT]; /* Ethernet Rx DMA Descriptors */
-#pragma location=0x30000200
+#pragma location=0x30000080
 ETH_DMADescTypeDef  DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptors */
 
 #elif defined ( __CC_ARM )  /* MDK ARM Compiler */
 
 __attribute__((at(0x30000000))) ETH_DMADescTypeDef  DMARxDscrTab[ETH_RX_DESC_CNT]; /* Ethernet Rx DMA Descriptors */
-__attribute__((at(0x30000200))) ETH_DMADescTypeDef  DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptors */
+__attribute__((at(0x30000080))) ETH_DMADescTypeDef  DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptors */
 
 #elif defined ( __GNUC__ ) /* GNU Compiler */
+
 ETH_DMADescTypeDef DMARxDscrTab[ETH_RX_DESC_CNT] __attribute__((section(".RxDecripSection"))); /* Ethernet Rx DMA Descriptors */
 ETH_DMADescTypeDef DMATxDscrTab[ETH_TX_DESC_CNT] __attribute__((section(".TxDecripSection")));   /* Ethernet Tx DMA Descriptors */
-
 #endif
 
 ETH_TxPacketConfig TxConfig;
@@ -104,6 +104,13 @@ const osThreadAttr_t scrDataTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for receiveDataTask */
+osThreadId_t receiveDataTaskHandle;
+const osThreadAttr_t receiveDataTask_attributes = {
+  .name = "receiveDataTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for scrDataQueue */
 osMessageQueueId_t scrDataQueueHandle;
 const osMessageQueueAttr_t scrDataQueue_attributes = {
@@ -135,6 +142,7 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 static void MX_USART2_UART_Init(void);
 void StartDefaultTask(void *argument);
 void StartScrDataTask(void *argument);
+void StartReceiveDataTask(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -151,6 +159,7 @@ scData scrData;
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -167,7 +176,7 @@ int main(void)
   /* Configure the system clock */
   SystemClock_Config();
 
-/* Configure the peripherals common clocks */
+  /* Configure the peripherals common clocks */
   PeriphCommonClock_Config();
 
   /* USER CODE BEGIN SysInit */
@@ -226,6 +235,9 @@ int main(void)
   /* creation of scrDataTask */
   scrDataTaskHandle = osThreadNew(StartScrDataTask, NULL, &scrDataTask_attributes);
 
+  /* creation of receiveDataTask */
+  receiveDataTaskHandle = osThreadNew(StartReceiveDataTask, NULL, &receiveDataTask_attributes);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -238,6 +250,7 @@ int main(void)
   osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -359,8 +372,6 @@ static void MX_ADC1_Init(void)
   /** Common config
   */
   hadc1.Instance = ADC1;
-  hadc1.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
-  hadc1.Init.Resolution = ADC_RESOLUTION_16B;
   hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   hadc1.Init.LowPowerAutoWait = DISABLE;
@@ -373,6 +384,13 @@ static void MX_ADC1_Init(void)
   hadc1.Init.Overrun = ADC_OVR_DATA_PRESERVED;
   hadc1.Init.LeftBitShift = ADC_LEFTBITSHIFT_NONE;
   hadc1.Init.OversamplingMode = DISABLE;
+  hadc1.Init.Oversampling.Ratio = 1;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
+  hadc1.Init.Resolution = ADC_RESOLUTION_16B;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
     Error_Handler();
@@ -426,8 +444,6 @@ static void MX_ADC2_Init(void)
   /** Common config
   */
   hadc2.Instance = ADC2;
-  hadc2.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
-  hadc2.Init.Resolution = ADC_RESOLUTION_16B;
   hadc2.Init.ScanConvMode = ADC_SCAN_DISABLE;
   hadc2.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   hadc2.Init.LowPowerAutoWait = DISABLE;
@@ -440,6 +456,13 @@ static void MX_ADC2_Init(void)
   hadc2.Init.Overrun = ADC_OVR_DATA_PRESERVED;
   hadc2.Init.LeftBitShift = ADC_LEFTBITSHIFT_NONE;
   hadc2.Init.OversamplingMode = DISABLE;
+  hadc2.Init.Oversampling.Ratio = 1;
+  if (HAL_ADC_Init(&hadc2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  hadc2.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
+  hadc2.Init.Resolution = ADC_RESOLUTION_16B;
   if (HAL_ADC_Init(&hadc2) != HAL_OK)
   {
     Error_Handler();
@@ -485,7 +508,7 @@ static void MX_ADC3_Init(void)
   /** Common config
   */
   hadc3.Instance = ADC3;
-  hadc3.Init.Resolution = ADC_RESOLUTION_16B;
+  hadc3.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
   hadc3.Init.ScanConvMode = ADC_SCAN_DISABLE;
   hadc3.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   hadc3.Init.LowPowerAutoWait = DISABLE;
@@ -498,6 +521,12 @@ static void MX_ADC3_Init(void)
   hadc3.Init.Overrun = ADC_OVR_DATA_PRESERVED;
   hadc3.Init.LeftBitShift = ADC_LEFTBITSHIFT_NONE;
   hadc3.Init.OversamplingMode = DISABLE;
+  hadc3.Init.Oversampling.Ratio = 1;
+  if (HAL_ADC_Init(&hadc3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  hadc3.Init.Resolution = ADC_RESOLUTION_16B;
   if (HAL_ADC_Init(&hadc3) != HAL_OK)
   {
     Error_Handler();
@@ -1339,13 +1368,42 @@ void StartScrDataTask(void *argument)
   for(;;)
   {
 	  if(osMessageQueueGetCount(scrDataQueueHandle)>0){
+		  ulTaskNotifyTake(pdTrue,portMax_DELAY);
 		  if(osMessageQueueGet(scrDataQueueHandle, &scrData, 0, 0)==osOK){
 			  HAL_UART_Transmit(&huart2, (uint8_t *)&scrData, sizeof(scrData), 100);
+			  xTaskNotiftyGive(receiveDataTaskHandle);
 		  }
 	  }
     osDelay(1);
   }
   /* USER CODE END StartScrDataTask */
+}
+
+/* USER CODE BEGIN Header_StartReceiveDataTask */
+/**
+* @brief Function implementing the receiveDataTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartReceiveDataTask */
+void StartReceiveDataTask(void *argument)
+{
+  /* USER CODE BEGIN StartReceiveDataTask */
+	answerData ans;
+  /* Infinite loop */
+  for(;;)
+  {
+	  ulTaskNotifyTake(pdTrue,portMAX_DELAY);
+
+	  HAL_UART_Receive(&huart2, (uint8_t *)&ans, sizeof(ans),100);
+	  if(osMessageQueueGetSpace(scrDataQueueHandle)>0){ // if there is space in the queue
+	  		osMessageQueuePut(scrDataQueueHandle, &ans, 0, 0); //send the structure to the queue
+	  	}
+	  xTaskNotifyGive(scrDataTaskHandle);
+
+    osDelay(1);
+  }
+  /* USER CODE END StartReceiveDataTask */
 }
 
 /**
