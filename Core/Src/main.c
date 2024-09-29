@@ -90,7 +90,25 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 SDRAM_HandleTypeDef hsdram1;
 
-osThreadId defaultTaskHandle;
+/* Definitions for defaultTask */
+osThreadId_t defaultTaskHandle;
+const osThreadAttr_t defaultTask_attributes = {
+  .name = "defaultTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for scrDataTask */
+osThreadId_t scrDataTaskHandle;
+const osThreadAttr_t scrDataTask_attributes = {
+  .name = "scrDataTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for scrDataQueue */
+osMessageQueueId_t scrDataQueueHandle;
+const osMessageQueueAttr_t scrDataQueue_attributes = {
+  .name = "scrDataQueue"
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -115,7 +133,8 @@ static void MX_SPI2_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
 static void MX_USART2_UART_Init(void);
-void StartDefaultTask(void const * argument);
+void StartDefaultTask(void *argument);
+void StartScrDataTask(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -123,7 +142,7 @@ void StartDefaultTask(void const * argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+scData scrData;
 /* USER CODE END 0 */
 
 /**
@@ -177,6 +196,9 @@ int main(void)
 
   /* USER CODE END 2 */
 
+  /* Init scheduler */
+  osKernelInitialize();
+
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
@@ -189,18 +211,28 @@ int main(void)
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
+  /* Create the queue(s) */
+  /* creation of scrDataQueue */
+  scrDataQueueHandle = osMessageQueueNew (2, sizeof(scData), &scrDataQueue_attributes);
+
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
-  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+  /* creation of defaultTask */
+  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* creation of scrDataTask */
+  scrDataTaskHandle = osThreadNew(StartScrDataTask, NULL, &scrDataTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
+
+  /* USER CODE BEGIN RTOS_EVENTS */
+  /* add events, ... */
+  /* USER CODE END RTOS_EVENTS */
 
   /* Start scheduler */
   osKernelStart();
@@ -1282,7 +1314,7 @@ static void MX_GPIO_Init(void)
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const * argument)
+void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
@@ -1291,6 +1323,50 @@ void StartDefaultTask(void const * argument)
     osDelay(1);
   }
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartScrDataTask */
+/**
+* @brief Function implementing the scrDataTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartScrDataTask */
+void StartScrDataTask(void *argument)
+{
+  /* USER CODE BEGIN StartScrDataTask */
+  /* Infinite loop */
+  for(;;)
+  {
+	  if(osMessageQueueGetCount(scrDataQueueHandle)>0){
+		  if(osMessageQueueGet(scrDataQueueHandle, &scrData, 0, 0)==osOK){
+			  HAL_UART_Transmit(&huart2, (uint8_t *)&scrData, sizeof(scrData), 100);
+		  }
+	  }
+    osDelay(1);
+  }
+  /* USER CODE END StartScrDataTask */
+}
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM6 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM6) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
 }
 
 /**

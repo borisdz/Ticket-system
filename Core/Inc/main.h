@@ -53,7 +53,12 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+typedef struct{
+	char data[100];
+	int len;
+	int totalPrice;
+	int ticketNo;
+}scData;
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
