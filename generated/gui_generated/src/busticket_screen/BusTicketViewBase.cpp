@@ -74,7 +74,7 @@ BusTicketViewBase::BusTicketViewBase() :
     busButtonUp.setPosition(379, 69, 70, 50);
     add(busButtonUp);
 
-    scrollBusDest.setPosition(12, 23, 210, 238);
+    scrollBusDest.setPosition(14, 20, 210, 238);
     scrollBusDest.setHorizontal(false);
     scrollBusDest.setCircular(false);
     scrollBusDest.setEasingEquation(touchgfx::EasingEquations::backEaseOut);

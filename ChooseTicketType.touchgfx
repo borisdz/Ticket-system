@@ -278,7 +278,7 @@
             "X": 14,
             "Y": 20,
             "Width": 210,
-            "Height": 230,
+            "Height": 238,
             "Snapping": true,
             "ItemTemplateName": "DestinationMenu",
             "NumberofItems": 7,
@@ -425,7 +425,7 @@
             "X": 249,
             "Y": 136,
             "Width": 166,
-            "Height": 22,
+            "Height": 21,
             "TextId": "__SingleUse_SN6S",
             "TextRotation": "0",
             "Color": {
@@ -441,7 +441,7 @@
             "X": 262,
             "Y": 170,
             "Width": 175,
-            "Height": 22,
+            "Height": 21,
             "TextId": "__SingleUse_AH6B",
             "TextRotation": "0",
             "Color": {
@@ -567,8 +567,8 @@
           {
             "Type": "ScrollList",
             "Name": "scrollBusDest",
-            "X": 12,
-            "Y": 23,
+            "X": 14,
+            "Y": 20,
             "Width": 210,
             "Height": 238,
             "ItemTemplateName": "DestinationMenu",

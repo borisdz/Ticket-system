@@ -29,6 +29,6 @@ int ReviewTicketPresenter::getTotalTicketPrice(){
 	return model->getTotalTicketPrice();
 }
 
-void ReviewTicketPresenter::sendDataH750(char *data){
-	model->sendDataH750(data);
+void ReviewTicketPresenter::sendDataH750(char *data, int totalPrice, int ticketNo){
+	model->sendDataH750(data,totalPrice, ticketNo);
 }

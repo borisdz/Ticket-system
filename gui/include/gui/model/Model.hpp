@@ -82,7 +82,7 @@ public:
     int getTicketScrollDestItem(void);
     void setTicketBaseSelectedPrice(int baseTicketPrice);
     int getTotalTicketPrice();
-    void sendDataH750(char *data);
+    void sendDataH750(char *data, int totalPrice, int ticketNo);
 protected:
     /**
      * Pointer to the currently active presenter.

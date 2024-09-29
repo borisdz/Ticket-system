@@ -35,7 +35,7 @@ public:
     virtual void setDestinationSelected(int16_t destinationSelected);
     int getTotalTicketPrice();
     void setBaseTicketSelectedPrice(int baseTicketPrice);
-    virtual void sendDataH750(char *data);
+    virtual void sendDataH750(char *data, int totalPrice, int ticketNo);
 private:
     ReviewTicketPresenter();
 

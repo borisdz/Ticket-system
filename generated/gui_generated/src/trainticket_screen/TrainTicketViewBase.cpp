@@ -68,7 +68,7 @@ TrainTicketViewBase::TrainTicketViewBase() :
     buttonCancel.setAction(buttonCallback);
     add(buttonCancel);
 
-    scrollTrainDest.setPosition(14, 20, 210, 230);
+    scrollTrainDest.setPosition(14, 20, 210, 238);
     scrollTrainDest.setHorizontal(false);
     scrollTrainDest.setCircular(false);
     scrollTrainDest.setEasingEquation(touchgfx::EasingEquations::backEaseOut);

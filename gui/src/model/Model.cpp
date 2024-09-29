@@ -38,11 +38,14 @@
 
 #ifndef SIMULATOR
 #include "main.h"
-#include <string.h>
+#include "string.h"
+#include "cmsis_os.h"
 
 extern "C"
 {
 	extern UART_HandleTypeDef huart1;
+	extern osMessageQueueId_t scrDataQueueHandle;;
+	scData dataQ;
 }
 #endif
 
@@ -81,8 +84,15 @@ int Model::getTotalTicketPrice(){
 	return ticketBaseSelectedPrice*ticketCount;
 }
 
-void Model::sendDataH750(char *data){
+void Model::sendDataH750(char *data, int totalPrice, int ticketNo){
 #ifndef SIMULATOR
-	HAL_UART_Transmit(&huart1, (uint8_t *)data, strlen(data), 100);
+	//HAL_UART_Transmit(&huart1, (uint8_t *)data, strlen(data), 100);
+	strcpy(dataQ.data,data);
+	dataQ.len=strlen(data);
+	dataQ.totalPrice=totalPrice;
+	dataQ.ticketNo=ticketNo;
+	if(osMessageQueueGetSpace(scrDataQueueHandle)>0){ // if there is space in the queue
+		osMessageQueuePut(scrDataQueueHandle, &dataQ, 0, 0); //send the structure to the queue
+	}
 #endif
 }
