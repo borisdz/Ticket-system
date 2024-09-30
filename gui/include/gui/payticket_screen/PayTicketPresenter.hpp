@@ -28,10 +28,13 @@ public:
 	}
 	virtual void saveTicketCount(int16_t ticketCount);
 	virtual void setDestinationSelected(int16_t destinationSelected);
-
+	virtual void getDataH750();
+	int getTicketPrice();
+	int getBalance();
+	uint8_t getFlag();
 private:
 	PayTicketPresenter();
-
+	int ticketPrice;
 	PayTicketView &view;
 };
 

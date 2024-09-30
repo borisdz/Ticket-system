@@ -46,7 +46,7 @@ PayTicketViewBase::PayTicketViewBase() :
     textCardAmount.setXY(17, 216);
     textCardAmount.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textCardAmount.setLinespacing(0);
-    Unicode::snprintf(textCardAmountBuffer, TEXTCARDAMOUNT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_1PMY).getText());
+    textCardAmountBuffer[0] = 0;
     textCardAmount.setWildcard(textCardAmountBuffer);
     textCardAmount.resizeToCurrentText();
     textCardAmount.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IAFP));
@@ -56,7 +56,7 @@ PayTicketViewBase::PayTicketViewBase() :
     textTicketPrice.setXY(17, 165);
     textTicketPrice.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTicketPrice.setLinespacing(0);
-    Unicode::snprintf(textTicketPriceBuffer, TEXTTICKETPRICE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_3P0K).getText());
+    textTicketPriceBuffer[0] = 0;
     textTicketPrice.setWildcard(textTicketPriceBuffer);
     textTicketPrice.resizeToCurrentText();
     textTicketPrice.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ME5R));

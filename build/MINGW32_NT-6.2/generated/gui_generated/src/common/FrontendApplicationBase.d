@@ -100,9 +100,6 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  generated/gui_generated/include/gui_generated/payticket_screen/PayTicketViewBase.hpp \
  gui/include/gui/payticket_screen/PayTicketPresenter.hpp \
  touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
- gui/include/gui/paymentresult_screen/PaymentResultView.hpp \
- generated/gui_generated/include/gui_generated/paymentresult_screen/PaymentResultViewBase.hpp \
- gui/include/gui/paymentresult_screen/PaymentResultPresenter.hpp \
  generated/texts/include/texts/TextKeysAndLanguages.hpp \
  touchgfx/framework/include/platform/driver/lcd/LCD24bpp.hpp \
  touchgfx/framework/include/touchgfx/lcd/LCD24DebugPrinter.hpp
@@ -306,12 +303,6 @@ generated/gui_generated/include/gui_generated/payticket_screen/PayTicketViewBase
 gui/include/gui/payticket_screen/PayTicketPresenter.hpp:
 
 touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
-
-gui/include/gui/paymentresult_screen/PaymentResultView.hpp:
-
-generated/gui_generated/include/gui_generated/paymentresult_screen/PaymentResultViewBase.hpp:
-
-gui/include/gui/paymentresult_screen/PaymentResultPresenter.hpp:
 
 generated/texts/include/texts/TextKeysAndLanguages.hpp:
 

@@ -52,7 +52,7 @@ extern "C"
 
 
 Model::Model() :
-modelListener(0),ticketCount(0),ticketBaseSelectedPrice(0),totalTicketPrice(0)
+modelListener(0),ticketCount(0),ticketBaseSelectedPrice(0),totalTicketPrice(0),finalBalance(0)
 {
 }
 
@@ -82,7 +82,7 @@ void Model::setTicketBaseSelectedPrice(int baseTicketPrice){
 }
 
 int Model::getTotalTicketPrice(){
-	return ticketBaseSelectedPrice*ticketCount;
+	return (int)(ticketBaseSelectedPrice*ticketCount);
 }
 
 void Model::sendDataH750(char *data, int totalPrice, int ticketNo){

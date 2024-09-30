@@ -122,9 +122,6 @@ build/MINGW32_NT-6.2/simulator/main.o: simulator/main.cpp \
  generated/gui_generated/include/gui_generated/payticket_screen/PayTicketViewBase.hpp \
  gui/include/gui/payticket_screen/PayTicketPresenter.hpp \
  touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
- gui/include/gui/paymentresult_screen/PaymentResultView.hpp \
- generated/gui_generated/include/gui_generated/paymentresult_screen/PaymentResultViewBase.hpp \
- gui/include/gui/paymentresult_screen/PaymentResultPresenter.hpp \
  generated/gui_generated/include/gui_generated/common/SimConstants.hpp \
  touchgfx/framework/include/platform/driver/touch/SDL2TouchController.hpp \
  generated/simulator/include/simulator/mainBase.hpp
@@ -374,12 +371,6 @@ generated/gui_generated/include/gui_generated/payticket_screen/PayTicketViewBase
 gui/include/gui/payticket_screen/PayTicketPresenter.hpp:
 
 touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
-
-gui/include/gui/paymentresult_screen/PaymentResultView.hpp:
-
-generated/gui_generated/include/gui_generated/paymentresult_screen/PaymentResultViewBase.hpp:
-
-gui/include/gui/paymentresult_screen/PaymentResultPresenter.hpp:
 
 generated/gui_generated/include/gui_generated/common/SimConstants.hpp:
 

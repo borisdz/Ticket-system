@@ -8,13 +8,13 @@ PayTicketView::PayTicketView()
 void PayTicketView::setupScreen()
 {
     PayTicketViewBase::setupScreen();
-    presenter->getDataH750();
+    //presenter->getDataH750();
     balance = presenter->getBalance();
     f = presenter->getFlag();
-    ticketPrice = presenter->getTicketPrice;
+    ticketPrice = presenter->getTicketPrice();
     Unicode::snprintf(textCardAmountBuffer, TEXTCARDAMOUNT_SIZE, "%d", balance);
-    Unicode::snprintf(textTicketPrice, TEXTTICKETPRICE_SIZE, "%d", ticketPrice);
-    getDataH750();
+    Unicode::snprintf(textTicketPriceBuffer, TEXTTICKETPRICE_SIZE, "%d", ticketPrice);
+    //getDataH750();
 }
 
 void PayTicketView::tearDownScreen()
@@ -39,7 +39,6 @@ void PayTicketView::getDataH750(){
 		textPayFailure.setVisible(true);
 		textTicketPrice.setVisible(true);
 		textCardAmount.setVisible(true);
-		osDelay(10000);
 	}else if(f==1){
 		textArea1.setVisible(false);
 		creditCardImg.setVisible(false);
@@ -47,7 +46,6 @@ void PayTicketView::getDataH750(){
 		textPaySuccess.setVisible(true);
 		textTicketPrice.setVisible(true);
 		textCardAmount.setVisible(true);
-		osDelay(10000);
 	}
 
 	presenter->saveTicketCount(0);

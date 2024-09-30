@@ -32,6 +32,9 @@ public:
     // ReviewTicket
     void gotoReviewTicketScreenNoTransition();
 
+    // PayTicket
+    void gotoPayTicketScreenNoTransition();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -48,6 +51,9 @@ protected:
 
     // ReviewTicket
     void gotoReviewTicketScreenNoTransitionImpl();
+
+    // PayTicket
+    void gotoPayTicketScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

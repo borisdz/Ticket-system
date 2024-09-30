@@ -84,6 +84,8 @@ public:
     int getTotalTicketPrice();
     void sendDataH750(char *data, int totalPrice, int ticketNo);
     void getDataH750();
+    int getUpdatedFunds();
+    uint8_t getStatus();
 protected:
     /**
      * Pointer to the currently active presenter.

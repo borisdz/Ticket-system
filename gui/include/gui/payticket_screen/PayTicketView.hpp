@@ -15,6 +15,7 @@ public:
     virtual void getDataH750();
 protected:
     uint8_t f;
+    int ticketPrice;
     int balance;
 };
 

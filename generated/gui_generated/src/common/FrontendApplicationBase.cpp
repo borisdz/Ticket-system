@@ -89,3 +89,16 @@ void FrontendApplicationBase::gotoReviewTicketScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<ReviewTicketView, ReviewTicketPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
+
+// PayTicket
+
+void FrontendApplicationBase::gotoPayTicketScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoPayTicketScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoPayTicketScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<PayTicketView, PayTicketPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}

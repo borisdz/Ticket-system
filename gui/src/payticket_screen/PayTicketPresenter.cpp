@@ -32,3 +32,12 @@ void PayTicketPresenter::saveTicketCount(int16_t ticketCount){
 void PayTicketPresenter::setDestinationSelected(int16_t destinationSelected){
 	model->setDestinationSelected(destinationSelected);
 }
+
+
+int PayTicketPresenter::getBalance(){
+	return model->getUpdatedFunds();
+}
+
+uint8_t PayTicketPresenter::getFlag(){
+	return model->getStatus();
+}

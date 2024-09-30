@@ -779,6 +779,17 @@
               "Type": "ActionCustom",
               "FunctionName": "reviewCancelButtonPressed"
             }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "PayTicket"
+            }
           }
         ]
       },
@@ -863,7 +874,7 @@
             "Name": "textCardAmount",
             "X": 17,
             "Y": 216,
-            "Width": 311,
+            "Width": 298,
             "Height": 24,
             "Visible": false,
             "TextId": "__SingleUse_IAFP",
@@ -875,7 +886,6 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_1PMY",
               "UseBuffer": true,
               "BufferSize": 10
             }
@@ -885,7 +895,7 @@
             "Name": "textTicketPrice",
             "X": 17,
             "Y": 165,
-            "Width": 143,
+            "Width": 130,
             "Height": 24,
             "Visible": false,
             "TextId": "__SingleUse_ME5R",
@@ -897,7 +907,6 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_3P0K",
               "UseBuffer": true,
               "BufferSize": 10
             }
