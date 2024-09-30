@@ -17,6 +17,13 @@ void PayTicketPresenter::deactivate()
 
 }
 
+void PayTicketPresenter::getDataH750(){
+	model->getDataH750();
+}
+
+int PayTicketPresenter::getTicketPrice(){
+	return model->getTotalTicketPrice();
+}
 
 void PayTicketPresenter::saveTicketCount(int16_t ticketCount){
 	model->saveTicketCount(ticketCount);

@@ -46,6 +46,7 @@ extern "C"
 	extern UART_HandleTypeDef huart1;
 	extern osMessageQueueId_t scrDataQueueHandle;;
 	scData dataQ;
+	answerData ans;
 }
 #endif
 
@@ -95,4 +96,20 @@ void Model::sendDataH750(char *data, int totalPrice, int ticketNo){
 		osMessageQueuePut(scrDataQueueHandle, &dataQ, 0, 0); //send the structure to the queue
 	}
 #endif
+}
+
+void Model::getDataH750(){
+#ifndef SIMULATOR
+	osMessageQueueGet(scrDataQueueHandle, &ans, 0, 0);
+	answer=ans;
+#endif
+
+}
+
+int Model::getUpdatedFunds(){
+	return answer.updatedFunds;
+}
+
+uint8_t Model::getStatus(){
+	return answer.flag;
 }

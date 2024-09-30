@@ -77,9 +77,8 @@ void ReviewTicketView::reviewCancelButtonPressed(){
 
 void ReviewTicketView::reviewBuyButtonPressed(){
 	  presenter->sendDataH750(destinationName, totalTicketPrice, ticketCount);
-
 	  memset(destinationName, '\0', sizeof(destinationName));
-
+	  application().gotoPayTicketScreenNoTransition();
 }
 
 

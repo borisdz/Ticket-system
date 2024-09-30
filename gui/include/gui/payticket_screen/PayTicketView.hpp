@@ -12,7 +12,10 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void buttonPaymentCancelled();
+    virtual void getDataH750();
 protected:
+    uint8_t f;
+    int balance;
 };
 
 #endif // PAYTICKETVIEW_HPP

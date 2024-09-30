@@ -83,16 +83,26 @@ public:
     void setTicketBaseSelectedPrice(int baseTicketPrice);
     int getTotalTicketPrice();
     void sendDataH750(char *data, int totalPrice, int ticketNo);
+    void getDataH750();
 protected:
     /**
      * Pointer to the currently active presenter.
      */
+
     ModelListener* modelListener;
+    typedef struct{
+    		int updatedFunds;
+    		uint8_t flag;
+    	}answerData;
 
     int16_t ticketCount;
     int ticketDestinationSelected;
     int ticketBaseSelectedPrice;
 	int totalTicketPrice;
+	int finalBalance;
+	uint8_t flag;
+	answerData answer;
+
 };
 
 #endif /* MODEL_HPP */

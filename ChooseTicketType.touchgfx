@@ -840,32 +840,6 @@
               "Green": 255,
               "Blue": 255
             }
-          }
-        ],
-        "Interactions": [
-          {
-            "InteractionName": "buttonPaymentCancelled",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonCancel"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "buttonPaymentCancelled"
-            }
-          }
-        ]
-      },
-      {
-        "Name": "PaymentResult",
-        "Components": [
-          {
-            "Type": "Image",
-            "Name": "background",
-            "Width": 480,
-            "Height": 480,
-            "LockPosition": true,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x480_spotlights.png"
           },
           {
             "Type": "TextArea",
@@ -874,6 +848,7 @@
             "Y": 41,
             "Width": 359,
             "Height": 72,
+            "Visible": false,
             "TextId": "__SingleUse_GJAA",
             "TextRotation": "0",
             "Color": {
@@ -890,6 +865,7 @@
             "Y": 216,
             "Width": 311,
             "Height": 24,
+            "Visible": false,
             "TextId": "__SingleUse_IAFP",
             "TextRotation": "0",
             "Color": {
@@ -899,7 +875,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_1PMY"
+              "TextId": "__SingleUse_1PMY",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -909,6 +887,7 @@
             "Y": 165,
             "Width": 143,
             "Height": 24,
+            "Visible": false,
             "TextId": "__SingleUse_ME5R",
             "TextRotation": "0",
             "Color": {
@@ -918,7 +897,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_3P0K"
+              "TextId": "__SingleUse_3P0K",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -939,7 +920,19 @@
             "AutoSize": true
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "buttonPaymentCancelled",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCancel"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonPaymentCancelled"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [

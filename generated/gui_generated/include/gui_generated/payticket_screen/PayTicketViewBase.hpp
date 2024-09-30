@@ -12,6 +12,7 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class PayTicketViewBase : public touchgfx::View<PayTicketPresenter>
 {
@@ -41,6 +42,18 @@ protected:
     touchgfx::ButtonWithLabel buttonCancel;
     touchgfx::ScalableImage creditCardImg;
     touchgfx::TextArea textArea1;
+    touchgfx::TextArea textPaySuccess;
+    touchgfx::TextAreaWithOneWildcard textCardAmount;
+    touchgfx::TextAreaWithOneWildcard textTicketPrice;
+    touchgfx::TextArea textPayFailure;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTCARDAMOUNT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textCardAmountBuffer[TEXTCARDAMOUNT_SIZE];
+    static const uint16_t TEXTTICKETPRICE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTicketPriceBuffer[TEXTTICKETPRICE_SIZE];
 
 private:
 
