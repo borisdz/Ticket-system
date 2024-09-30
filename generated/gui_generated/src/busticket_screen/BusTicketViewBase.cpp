@@ -80,7 +80,7 @@ BusTicketViewBase::BusTicketViewBase() :
     scrollBusDest.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
     scrollBusDest.setSwipeAcceleration(10);
     scrollBusDest.setDragAcceleration(10);
-    scrollBusDest.setNumberOfItems(10);
+    scrollBusDest.setNumberOfItems(7);
     scrollBusDest.setPadding(0, 0);
     scrollBusDest.setSnapping(false);
     scrollBusDest.setOvershootPercentage(75);
