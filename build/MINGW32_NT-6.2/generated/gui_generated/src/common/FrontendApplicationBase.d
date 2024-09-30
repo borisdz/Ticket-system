@@ -100,12 +100,9 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  generated/gui_generated/include/gui_generated/payticket_screen/PayTicketViewBase.hpp \
  gui/include/gui/payticket_screen/PayTicketPresenter.hpp \
  touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
- gui/include/gui/paymentsuccess_screen/PaymentSuccessView.hpp \
- generated/gui_generated/include/gui_generated/paymentsuccess_screen/PaymentSuccessViewBase.hpp \
- gui/include/gui/paymentsuccess_screen/PaymentSuccessPresenter.hpp \
- gui/include/gui/paymentfail_screen/PaymentFailView.hpp \
- generated/gui_generated/include/gui_generated/paymentfail_screen/PaymentFailViewBase.hpp \
- gui/include/gui/paymentfail_screen/PaymentFailPresenter.hpp \
+ gui/include/gui/paymentresult_screen/PaymentResultView.hpp \
+ generated/gui_generated/include/gui_generated/paymentresult_screen/PaymentResultViewBase.hpp \
+ gui/include/gui/paymentresult_screen/PaymentResultPresenter.hpp \
  generated/texts/include/texts/TextKeysAndLanguages.hpp \
  touchgfx/framework/include/platform/driver/lcd/LCD24bpp.hpp \
  touchgfx/framework/include/touchgfx/lcd/LCD24DebugPrinter.hpp
@@ -310,17 +307,11 @@ gui/include/gui/payticket_screen/PayTicketPresenter.hpp:
 
 touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
 
-gui/include/gui/paymentsuccess_screen/PaymentSuccessView.hpp:
+gui/include/gui/paymentresult_screen/PaymentResultView.hpp:
 
-generated/gui_generated/include/gui_generated/paymentsuccess_screen/PaymentSuccessViewBase.hpp:
+generated/gui_generated/include/gui_generated/paymentresult_screen/PaymentResultViewBase.hpp:
 
-gui/include/gui/paymentsuccess_screen/PaymentSuccessPresenter.hpp:
-
-gui/include/gui/paymentfail_screen/PaymentFailView.hpp:
-
-generated/gui_generated/include/gui_generated/paymentfail_screen/PaymentFailViewBase.hpp:
-
-gui/include/gui/paymentfail_screen/PaymentFailPresenter.hpp:
+gui/include/gui/paymentresult_screen/PaymentResultPresenter.hpp:
 
 generated/texts/include/texts/TextKeysAndLanguages.hpp:
 

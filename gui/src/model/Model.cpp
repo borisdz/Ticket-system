@@ -36,7 +36,23 @@
 #include <gui/model/ModelListener.hpp>
 #include <touchgfx/hal/types.hpp>
 
-Model::Model() : modelListener(0),ticketCount(0)
+#ifndef SIMULATOR
+#include "main.h"
+#include "string.h"
+#include "cmsis_os.h"
+
+extern "C"
+{
+	extern UART_HandleTypeDef huart1;
+	extern osMessageQueueId_t scrDataQueueHandle;;
+	scData dataQ;
+	answerData ans;
+}
+#endif
+
+
+Model::Model() :
+modelListener(0),ticketCount(0),ticketBaseSelectedPrice(0),totalTicketPrice(0)
 {
 }
 
@@ -59,4 +75,41 @@ int16_t Model::getTicketCount(){
 
 void Model::saveTicketCount(int16_t saveTicketCount){
 	ticketCount=saveTicketCount;
+}
+
+void Model::setTicketBaseSelectedPrice(int baseTicketPrice){
+	ticketBaseSelectedPrice=baseTicketPrice;
+}
+
+int Model::getTotalTicketPrice(){
+	return ticketBaseSelectedPrice*ticketCount;
+}
+
+void Model::sendDataH750(char *data, int totalPrice, int ticketNo){
+#ifndef SIMULATOR
+	//HAL_UART_Transmit(&huart1, (uint8_t *)data, strlen(data), 100);
+	strcpy(dataQ.data,data);
+	dataQ.len=strlen(data);
+	dataQ.totalPrice=totalPrice;
+	dataQ.ticketNo=ticketNo;
+	if(osMessageQueueGetSpace(scrDataQueueHandle)>0){ // if there is space in the queue
+		osMessageQueuePut(scrDataQueueHandle, &dataQ, 0, 0); //send the structure to the queue
+	}
+#endif
+}
+
+void Model::getDataH750(){
+#ifndef SIMULATOR
+	osMessageQueueGet(scrDataQueueHandle, &ans, 0, 0);
+	answer=ans;
+#endif
+
+}
+
+int Model::getUpdatedFunds(){
+	return answer.updatedFunds;
+}
+
+uint8_t Model::getStatus(){
+	return answer.flag;
 }

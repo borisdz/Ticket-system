@@ -68,7 +68,7 @@ TrainTicketViewBase::TrainTicketViewBase() :
     buttonCancel.setAction(buttonCallback);
     add(buttonCancel);
 
-    scrollTrainDest.setPosition(14, 20, 210, 230);
+    scrollTrainDest.setPosition(14, 20, 210, 238);
     scrollTrainDest.setHorizontal(false);
     scrollTrainDest.setCircular(false);
     scrollTrainDest.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
@@ -132,10 +132,10 @@ void TrainTicketViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
     }
     if (&src == &buttonCancel)
     {
-        //buttonCancelPressed
-        //When buttonCancel clicked change screen to Main
-        //Go to Main with no screen transition
-        application().gotoMainScreenNoTransition();
+        //trainButtonCancelPressed
+        //When buttonCancel clicked call virtual function
+        //Call trainButtonCancelPressed
+        trainButtonCancelPressed();
     }
 }
 

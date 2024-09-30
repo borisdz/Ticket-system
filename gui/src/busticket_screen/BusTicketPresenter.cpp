@@ -28,3 +28,7 @@ void BusTicketPresenter::busDestinationSelected(int16_t busItemSelected){
 int16_t BusTicketPresenter::getBusTicketCount(){
 	return model->getTicketCount();
 }
+
+void BusTicketPresenter::setBusBaseSelectedPrice(int baseTicketPrice){
+	model->setTicketBaseSelectedPrice(baseTicketPrice);
+}

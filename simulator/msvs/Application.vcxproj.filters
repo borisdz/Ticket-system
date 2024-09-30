@@ -247,18 +247,6 @@
     <Filter Include="Header Files\generated\gui_generated\trainticket_screen">
       <UniqueIdentifier>C8E52289-70E5-C947-2C58-06155192543D</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\paymentresult_screen">
-      <UniqueIdentifier>21A6FE56-6B70-4B20-C21A-CD10BCA61FFD</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\paymentresult_screen">
-      <UniqueIdentifier>BDF389E8-2F99-4446-3431-2D6FEB30DACF</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\paymentresult_screen">
-      <UniqueIdentifier>1C1C7C17-8B14-3EC2-322F-D49F90236216</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\paymentresult_screen">
-      <UniqueIdentifier>D55390FB-E89D-33A2-ABB5-BB9E0C78EF32</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -341,15 +329,6 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\DestinationMenuBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\paymentresult_screen\PaymentResultPresenter.cpp">
-      <Filter>Source Files\gui\paymentresult_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\paymentresult_screen\PaymentResultView.cpp">
-      <Filter>Source Files\gui\paymentresult_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\paymentresult_screen\PaymentResultViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\paymentresult_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -846,15 +825,6 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DestinationMenuBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\paymentresult_screen\PaymentResultPresenter.hpp">
-      <Filter>Header Files\gui\paymentresult_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\paymentresult_screen\PaymentResultView.hpp">
-      <Filter>Header Files\gui\paymentresult_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\paymentresult_screen\PaymentResultViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\paymentresult_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

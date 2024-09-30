@@ -39,6 +39,10 @@ public:
     {
         // Override and implement this function in TrainTicket
     }
+    virtual void trainButtonCancelPressed()
+    {
+        // Override and implement this function in TrainTicket
+    }
 
 protected:
     FrontendApplication& application() {

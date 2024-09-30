@@ -33,24 +33,31 @@ void BusTicketView::scrollBusDest_ItemSelectedHandler(int16_t itemSelected){
 			break;
 		case 0:
 			busTextSelectedDest.setTypedText(TypedText(T_SKOPJE));
+			presenter->setBusBaseSelectedPrice(1000);
 			break;
 		case 1:
 			busTextSelectedDest.setTypedText(TypedText(T_DRACHEVO));
+			presenter->setBusBaseSelectedPrice(800);
 			break;
 		case 2:
 			busTextSelectedDest.setTypedText(TypedText(T_VELES));
+			presenter->setBusBaseSelectedPrice(500);
 			break;
 		case 3:
 			busTextSelectedDest.setTypedText(TypedText(T_GRADSKO));
+			presenter->setBusBaseSelectedPrice(900);
 			break;
 		case 4:
 			busTextSelectedDest.setTypedText(TypedText(T_NEGOTINO));
+			presenter->setBusBaseSelectedPrice(200);
 			break;
 		case 5:
 			busTextSelectedDest.setTypedText(TypedText(T_DEMIRKAPIJA));
+			presenter->setBusBaseSelectedPrice(300);
 			break;
 		case 6:
 			busTextSelectedDest.setTypedText(TypedText(T_GEVGELIJA));
+			presenter->setBusBaseSelectedPrice(1100);
 			break;
 		}
 	busTextSelectedDest.invalidate();

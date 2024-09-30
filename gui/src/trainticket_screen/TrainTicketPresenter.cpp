@@ -22,10 +22,15 @@ void TrainTicketPresenter::saveTicketCount(int16_t ticketCount){
 }
 
 
-void TrainTicketPresenter::destinationSelected(int16_t itemSelected){
+void TrainTicketPresenter::setDestinationSelected(int16_t itemSelected){
 	model->setDestinationSelected(itemSelected);
 }
 
 int16_t TrainTicketPresenter::getTrainTicketCount(){
 	return model->getTicketCount();
+}
+
+
+void TrainTicketPresenter::setTrainBaseSelectedPrice(int baseTicketPrice){
+	model->setTicketBaseSelectedPrice(baseTicketPrice);
 }

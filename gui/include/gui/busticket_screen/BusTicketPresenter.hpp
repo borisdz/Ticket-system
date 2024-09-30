@@ -30,7 +30,7 @@ public:
     void saveBusTicketCount(int16_t busTicketCount);
     int16_t getBusTicketCount();
     virtual void busDestinationSelected(int16_t itemSelected);
-
+    virtual void setBusBaseSelectedPrice(int baseTicketPrice);
 private:
     BusTicketPresenter();
 

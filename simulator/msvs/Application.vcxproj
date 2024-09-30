@@ -38,9 +38,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\trainticket_screen\TrainTicketViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\DestinationMenu.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\DestinationMenuBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\paymentresult_screen\PaymentResultPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\paymentresult_screen\PaymentResultView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\paymentresult_screen\PaymentResultViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -209,9 +206,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\trainticket_screen\TrainTicketViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\DestinationMenu.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DestinationMenuBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\paymentresult_screen\PaymentResultPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\paymentresult_screen\PaymentResultView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\paymentresult_screen\PaymentResultViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

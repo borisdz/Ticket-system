@@ -40,20 +40,20 @@
       <Text Id="__SingleUse_0YP6" Alignment="Left" TypographyId="Typography_02">
         <Translation Language="GB">Payment failed!&#10;Insufficient funds.</Translation>
       </Text>
-      <Text Id="__SingleUse_3P0K" Alignment="Left" TypographyId="Typography_00">
-        <Translation Language="GB">0</Translation>
-      </Text>
       <Text Id="__SingleUse_ME5R" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">Ticket price: &lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_1PMY" Alignment="Left" TypographyId="Typography_00">
-        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_IAFP" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">Your current card amount is: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_GJAA" Alignment="Center" TypographyId="Typography_02">
         <Translation Language="GB">Payment successful! &#10;Please take your ticket!</Translation>
+      </Text>
+      <Text Id="__SingleUse_4NFB" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_VNPC" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">Total price: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_NDMJ" Alignment="Center" TypographyId="Typography_00">
         <Translation Language="GB">Next</Translation>
@@ -104,7 +104,7 @@
         <Translation Language="GB">Destination:</Translation>
       </Text>
       <Text Id="__SingleUse_H2HS" Alignment="Left" TypographyId="Typography_00">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">1</Translation>
       </Text>
       <Text Id="__SingleUse_CT7L" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">Number of tickets:&lt;value&gt;</Translation>
@@ -116,7 +116,7 @@
         <Translation Language="GB">(Select a city from list)</Translation>
       </Text>
       <Text Id="__SingleUse_QQ70" Alignment="Left" TypographyId="Typography_00">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">1</Translation>
       </Text>
       <Text Id="__SingleUse_QORF" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">Number of tickets:&lt;value&gt;</Translation>
