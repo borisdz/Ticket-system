@@ -18,6 +18,7 @@
 ![trainticket_screen.png](assets/trainticket_screen.png)
 
 Ова е екранот на кој корисникот ќе биде однесен доколку стисне на копчето за билет за воз. На овој екран има повеќе компоненти. Лево има компонента од типот `ScrollList`. Како елемент на таа компонента користам custom Container кој е всушност само текст поле. За печатење на елементите се прикажуваат елементите кои се наоѓаат во `Texts` во `TouchGFX Designer`:
+
 ![trainDestinations.png](assets/trainDestinations.png)
 ![containerData.png](assets/containerData.png)
 ![trainDestinationFunc.png](assets/trainDestinationFunc.png)
